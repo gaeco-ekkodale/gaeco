@@ -1,0 +1,69 @@
+{
+  "_comment": "Deklarative Instanz-Kette fuer den InstanceService: 1 Portfolio -> 3 Gebaeude -> je 1 Adresse -> je 1..2 Etagen (Floor) -> je 1..2 Raeume (Space). Das Seeding (setup-demo-data.py) verwendet die classificationId-URIs aus 'classes'/ classhierarchie unten. Relationen laufen jeweils domain -> range gemaess ontology.ttl (Schema https://ibpdi.org/ontology/2.0/).",
+
+  "classes": {
+    "portfolio": "Portfolio",
+    "building": "Building",
+    "address": "Address",
+    "floor": "Floor",
+    "space": "Space"
+  },
+
+  "predicates": {
+    "portfolioHasBuilding": "https://ibpdi.org/ontology/2.0/portfolioHasBuilding",
+    "addressHasBuilding": "https://ibpdi.org/ontology/2.0/addressHasBuilding",
+    "buildingHasFloor": "https://ibpdi.org/ontology/2.0/buildingHasFloor",
+    "floorHasSpace": "https://ibpdi.org/ontology/2.0/floorHasSpace"
+  },
+
+  "portfolio": {
+    "name": "Demo Portfolio"
+  },
+
+  "buildings": [
+    {
+      "name": "Gebaeude Nord",
+      "address": { "name": "Musterstrasse 1, 10115 Berlin" },
+      "floors": [
+        {
+          "name": "Erdgeschoss",
+          "spaces": [
+            { "name": "Buero 001" },
+            { "name": "Besprechungsraum 002" }
+          ]
+        },
+        {
+          "name": "1. Obergeschoss",
+          "spaces": [
+            { "name": "Buero 101" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gebaeude West",
+      "address": { "name": "Beispielweg 12, 50667 Koeln" },
+      "floors": [
+        {
+          "name": "Erdgeschoss",
+          "spaces": [
+            { "name": "Empfang" },
+            { "name": "Lager" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gebaeude Sued",
+      "address": { "name": "Testallee 7, 80331 Muenchen" },
+      "floors": [
+        {
+          "name": "Erdgeschoss",
+          "spaces": [
+            { "name": "Grossraumbuero" }
+          ]
+        }
+      ]
+    }
+  ]
+}

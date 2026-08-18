@@ -1,0 +1,352 @@
+[
+  {
+    "id": "a0000000-0000-0000-0000-000000000001",
+    "name": "Portfolio / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Portfolio",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Portfolio/Name",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000002",
+    "name": "Portfolio / MarketValue",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Portfolio",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Portfolio/MarketValue",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000003",
+    "name": "Building / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/Name",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000004",
+    "name": "Building / EnergyEfficiencyClass",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/EnergyEfficiencyClass",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000005",
+    "name": "Building / AirConditioning",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/AirConditioning",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000006",
+    "name": "Building / ConstructionYear",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/ConstructionYear",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000007",
+    "name": "Address / City",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Address",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Address/City",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000008",
+    "name": "Address / StreetName",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Address",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Address/StreetName",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000009",
+    "name": "Address / PostalCode",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Address",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Address/PostalCode",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000010",
+    "name": "Floor / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Floor",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Floor/Name",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000011",
+    "name": "Floor / FloorNumber",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Floor",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Floor/FloorNumber",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000012",
+    "name": "Space / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/Name",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000013",
+    "name": "Space / SpaceNumber",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/SpaceNumber",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000014",
+    "name": "Space / MaximumOccupancy",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/MaximumOccupancy",
+    "right": 1
+  },
+  {
+    "id": "a0000000-0000-0000-0000-000000000015",
+    "name": "Space / Type",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 0,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/Type",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000001",
+    "name": "Portfolio / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Portfolio",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Portfolio/Name",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000002",
+    "name": "Building / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/Name",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000003",
+    "name": "Building / ConstructionYear",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/ConstructionYear",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000004",
+    "name": "Building / Status",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/Status",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000005",
+    "name": "Building / MonumentProtection",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/MonumentProtection",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000006",
+    "name": "Address / City",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Address",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Address/City",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000007",
+    "name": "Floor / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Floor",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Floor/Name",
+    "right": 1
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000008",
+    "name": "Floor / FloorCode",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Floor",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 1,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Floor/FloorCode",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000001",
+    "name": "Portfolio / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Portfolio",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Portfolio/Name",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000002",
+    "name": "Building / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/Name",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000003",
+    "name": "Building / ParkingSpaces",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/ParkingSpaces",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000004",
+    "name": "Building / TenantStructure",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Building",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Building/TenantStructure",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000005",
+    "name": "Address / City",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Address",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Address/City",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000006",
+    "name": "Floor / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Floor",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Floor/Name",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000007",
+    "name": "Floor / FloorNumber",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Floor",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Floor/FloorNumber",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000008",
+    "name": "Space / Name",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/Name",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000009",
+    "name": "Space / MaximumOccupancy",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/MaximumOccupancy",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000010",
+    "name": "Space / Rentability",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/Rentability",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000011",
+    "name": "Space / Type",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/Type",
+    "right": 1
+  },
+  {
+    "id": "a2000000-0000-0000-0000-000000000012",
+    "name": "Space / SpaceHeight",
+    "guidelineClassificationId": "https://ibpdi.org/ontology/2.0/Space",
+    "userGroupId": "afc11091-e386-4490-9ea9-00eb02fe6b7f",
+    "useCaseId": "",
+    "useCaseIndex": 2,
+    "guidlineClassificationPropertyId": "https://ibpdi.org/ontology/2.0/Space/SpaceHeight",
+    "right": 1
+  }
+]

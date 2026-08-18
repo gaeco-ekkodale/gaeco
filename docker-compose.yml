@@ -1,0 +1,54 @@
+# Copyright (c) 2025 Ekkodale GmbH. All rights reserved.
+#
+# This file is part of the gaeco platform system.
+#
+# Use of this file is governed by the terms of the license
+# in LICENSE.md at the root of this repository.
+# Unauthorized copying, modification, distribution, or use of this file,
+# via any medium, is strictly prohibited except as expressly permitted
+# under that license.
+
+# =============================================================================
+# gaeco — local full stack (public images, no submodules required)
+# =============================================================================
+# Start:   cp .env.example .env  &&  docker compose up -d
+# Stop:    docker compose down
+# Logs:    docker compose logs -f <service>
+#
+# Structure: this file includes the individual service composes via `include:`.
+# Order/dependencies are controlled by the `depends_on` entries in the files
+# (infra -> backends -> Plugin Host). Add-ons are OFF by default; to
+# enable one, uncomment the relevant line under "addons".
+# =============================================================================
+
+include:
+  # ── Infrastructure ────────────────────────────────────────────────────────
+  - docker-compose-files/general-services.yml   # Kafka, MinIO, Kafka-UI, Aspire
+  - docker-compose-files/keycloak.yml            # Identity Provider (+ realm import)
+
+  # ── Backend services (+ Microfrontend clients) ─────────────────────────────
+  - docker-compose-files/ontology-service.yml
+  - docker-compose-files/guideline-service.yml
+  - docker-compose-files/usecase-service.yml
+  - docker-compose-files/access-service.yml
+  - docker-compose-files/instance-service.yml
+  - docker-compose-files/platformconfig-service.yml
+  - docker-compose-files/homepage-service.yml    # start page shown at "/" in the host
+
+  # ── Orchestrator (registers the Microfrontends in the Plugin Host) ─────────
+  - docker-compose-files/apporchestrator.yml
+
+  # ── Plugin Host (Microfrontend host — starts last) ─────────────────────────
+  - docker-compose-files/pluginhost.yml
+
+  # ── Add-ons (optional — uncomment to enable) ───────────────────────────────
+  # - docker-compose-files/addons/map-service.yml
+  # - docker-compose-files/addons/ifc-parser.yml
+  # - docker-compose-files/addons/excel-importer.yml
+
+# Shared service network. Each service file defines it identically (name:
+# gaeco-local) plus its own <service>-internal for its database.
+# Via gaeco-network the containers reach each other by service name (e.g. gaeco-broker).
+networks:
+  gaeco-network:
+    name: gaeco-local

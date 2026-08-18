@@ -1,0 +1,14 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix ibpdi: <https://ibpdi.org/ontology/2.0/> .
+@prefix ifc: <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/> .
+@prefix links: <http://gaeco.example.org/links#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://gaeco.example.org/links> a owl:Ontology .
+
+links:BuildingHasIfcBuilding a owl:ObjectProperty ;
+    rdfs:label "building has ifc building"@en ;
+    rdfs:domain ibpdi:Building ;
+    rdfs:range ifc:IfcBuilding .
+

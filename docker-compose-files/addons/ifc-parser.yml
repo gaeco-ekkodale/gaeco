@@ -1,0 +1,124 @@
+# Copyright (c) 2025 Ekkodale GmbH. All rights reserved.
+#
+# This file is part of the gaeco platform system.
+#
+# Use of this file is governed by the terms of the license
+# in LICENSE.md at the root of this repository.
+# Unauthorized copying, modification, distribution, or use of this file,
+# via any medium, is strictly prohibited except as expressly permitted
+# under that license.
+
+# =============================================================================
+# ADD-ON: IFC-Parser — parses/imports IFC files (BIM) (+ MFE client)
+# -----------------------------------------------------------------------------
+# Parser-specific config is set inline with defaults; only the Kafka
+# UseCase IDs (export/import) may need adjusting to your data set.
+# =============================================================================
+services:
+  ifc-uploader-postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: ${IFC_DB_USER}
+      POSTGRES_PASSWORD: ${IFC_DB_PASSWORD}
+      POSTGRES_DB: ${IFC_DB_NAME}
+    ports:
+      - "${IFC_POSTGRES_PORT}:5432"
+    volumes:
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/ifc/postgres/
+        target: /var/lib/postgresql/data
+    networks:
+      - ifc-internal
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-h", "127.0.0.1", "-d", "${IFC_DB_NAME}", "-U", "${IFC_DB_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 50
+      start_period: 30s
+
+  ifc-uploader-service:
+    image: ${IMAGE_REGISTRY}/ifcuploaderserver:${IFC_UPLOADER_SERVER_TAG}
+    ports:
+      - "${IFC_SERVER_PORT}:80"
+    environment:
+      ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      # MinIO
+      MINIO_ENDPOINT: ${MINIO_ADDRESS}
+      MINIO_URL: http://${MINIO_ADDRESS}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      # Kafka
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_ADDRESS}
+      KAFKA_CONSUMER_GROUP: ${IFC_KAFKA_CONSUMER_GROUP:-ifc-uploader-group}
+      KAFKA_AUTO_OFFSET_RESET: ${KAFKA_AUTO_OFFSET_RESET}
+      KAFKA_SESSION_TIMEOUT_MS: ${KAFKA_SESSION_TIMEOUT_MS}
+      KAFKA_MAX_POLL_INTERVAL_MS: ${KAFKA_MAX_POLL_INTERVAL_MS}
+      KAFKA_TOPIC_PATTERN_EXPORT: ${IFC_TOPIC_PATTERN_EXPORT:-ekkodale.gaeco.instance.public.{usecaseId}.gaecoExport}
+      KAFKA_TOPIC_PATTERN_IMPORT: ${IFC_TOPIC_PATTERN_IMPORT:-ekkodale.gaeco.instance.public.{usecaseId}.gaecoImport}
+      KAFKA_EXPORT_USECASE_ID: ${IFC_EXPORT_USECASE_ID:-9219ca48-4bf3-46bc-b908-b30d112c66fa}
+      KAFKA_IMPORT_USECASE_ID: ${IFC_IMPORT_USECASE_ID:-6cae8530-a00b-4514-97c0-7af5d4fb19d2}
+      KAFKA_USERGROUP: ${IFC_KAFKA_USERGROUP:-gaeco}
+      KAFKA_VERSION: ${IFC_KAFKA_VERSION:-v1}
+      KAFKA_EVENT: ${IFC_KAFKA_EVENT:-dump}
+      KAFKA_ENTITY: ${IFC_KAFKA_ENTITY:-GraphDataModel}
+      # Keycloak
+      KEYCLOAK_SERVER_URL: ${KEYCLOAK_BACKEND_URL}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM}
+      KEYCLOAK_CLIENT_ID: ${IFC_KEYCLOAK_CLIENT_ID}
+      KEYCLOAK_CLIENT_SECRET: ${IFC_KEYCLOAK_CLIENT_SECRET}
+      # Database
+      DB_HOST: ifc-uploader-postgres
+      DB_NAME: ${IFC_DB_NAME}
+      DB_USER: ${IFC_DB_USER}
+      DB_PASSWORD: ${IFC_DB_PASSWORD}
+      DB_PORT: 5432
+      # External services (reachable in the same network by service name)
+      USECASE_SERVER_HOSTURL: http://usecase-server:80
+      INSTANCE_SERVICE_URL: http://instance-server:80
+      # IFC Parser Configuration
+      PARSER_IFC_NAMESPACE_URL: ${IFC_NAMESPACE_URL:-https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/}
+      PARSER_IFC_NAMESPACE_PREFIX: ${IFC_NAMESPACE_PREFIX:-ifc}
+      PARSER_DCTERMS_NAMESPACE_URL: ${DCTERMS_NAMESPACE_URL:-http://purl.org/dc/terms/}
+      PARSER_DCTERMS_NAMESPACE_PREFIX: ${DCTERMS_NAMESPACE_PREFIX:-dcterms}
+      PARSER_RELATION_NAME: ${IFC_RELATION_NAME:-hasPart}
+      PARSER_LB_PREFIX_URI: ${IFC_LB_PREFIX_URI:-https://example.com/class/}
+      PARSER_PORTFOLIO_ID_CLASS_TYPE: ${IFC_PORTFOLIO_ID_CLASS_TYPE:-https://example.com/class/Portfolio}
+      PARSER_BUILDING_ID_CLASS_TYPE: ${IFC_BUILDING_ID_CLASS_TYPE:-https://example.com/class/Building}
+      PARSER_BUILDING_CODE_PROPERTY: ${IFC_BUILDING_CODE_PROPERTY:-BuildingId}
+      PARSER_BUILDING_NAME_PROPERTY: ${IFC_BUILDING_NAME_PROPERTY:-Name}
+      PARSER_IFC_PROJECT_CLASS_TYPE: ${IFC_PROJECT_CLASS_TYPE:-https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcProject}
+      PARSER_BUILDING_TO_PROJECT_PREDICATE: ${IFC_BUILDING_TO_PROJECT_PREDICATE:-hasIfcProject}
+      # BSDD
+      BSDD_API_BASE_URL: ${BSDD_API_BASE_URL:-https://api.bsdd.buildingsmart.org}
+      BSDD_MAPPING_ENABLED: ${BSDD_MAPPING_ENABLED:-True}
+      BSDD_LANGUAGE_CODE: ${BSDD_LANGUAGE_CODE:-}
+    depends_on:
+      ifc-uploader-postgres:
+        condition: service_healthy
+    networks:
+      - ifc-internal
+      - gaeco-network
+
+  ifc-uploader-client:
+    image: ${IMAGE_REGISTRY}/ifcuploaderclient:${IFC_UPLOADER_CLIENT_TAG}
+    ports:
+      - "${IFC_CLIENT_PORT}:80"
+    environment:
+      VITE_MOUNT_PATH: ${IFC_MOUNT_ROUTE}
+    depends_on:
+      - ifc-uploader-service
+    networks:
+      - gaeco-network
+    labels:
+      app.mfe.id: "ifc-uploader-client"
+      app.mfe.displayName: "IFC Uploader Client"
+      app.mfe.description: "IFC Uploader Client Application"
+      app.mfe.iconPath: "/Ifc.svg"
+      app.mfe.entrypointPath: "/assets/remoteEntry.js"
+      app.mfe.exposedModule: "App"
+      app.mfe.route: "${IFC_MOUNT_ROUTE}"
+
+networks:
+  ifc-internal:
+  gaeco-network:
+    name: gaeco-local

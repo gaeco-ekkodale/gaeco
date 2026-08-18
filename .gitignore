@@ -1,0 +1,15 @@
+# Your local configuration with credentials — NEVER commit this.
+# Copy .env.example and drop the suffix.
+.env
+!.env.example
+
+# Docker volumes (when used locally as a bind mount)
+volumes/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db

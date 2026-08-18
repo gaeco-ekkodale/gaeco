@@ -1,0 +1,101 @@
+# Copyright (c) 2025 Ekkodale GmbH. All rights reserved.
+#
+# This file is part of the gaeco platform system.
+#
+# Use of this file is governed by the terms of the license
+# in LICENSE.md at the root of this repository.
+# Unauthorized copying, modification, distribution, or use of this file,
+# via any medium, is strictly prohibited except as expressly permitted
+# under that license.
+
+# =============================================================================
+# Keycloak — Identity Provider (OAuth2/OIDC) + Postgres
+# =============================================================================
+# The "gaeco" realm is imported from keycloak/gaeco-realm.json on first start.
+#
+# IMPORTANT (token issuer): KC_HOSTNAME is set FIXED to the browser URL so that
+# all parties see the same issuer. Backends reach Keycloak via
+# host.docker.internal (host-published port); but the issuer of the issued
+# tokens always remains ${KEYCLOAK_BROWSER_URL}. → Verify on the first real run.
+# =============================================================================
+services:
+  keycloak-postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: ${KEYCLOAK_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${KEYCLOAK_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${KEYCLOAK_POSTGRES_DATABASE}
+    volumes:
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/keycloak/postgres
+        target: /var/lib/postgresql/data
+    networks:
+      - keycloak-internal
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-q",
+          "-d",
+          "${KEYCLOAK_POSTGRES_DATABASE}",
+          "-U",
+          "${KEYCLOAK_POSTGRES_USER}",
+        ]
+      interval: 10s
+      timeout: 45s
+      retries: 50
+
+  keycloak-server:
+    image: keycloak/keycloak:26.3
+    restart: always
+    command: start --import-realm
+    ports:
+      - "${KEYCLOAK_PORT}:8080"
+    environment:
+      # Fixed frontend issuer (what the browser sees and writes into the token).
+      KC_HOSTNAME: ${KEYCLOAK_BROWSER_URL}
+      # Backchannel URLs (jwks_uri, token_endpoint) follow the request host instead
+      # of KC_HOSTNAME. This lets the backend pull the keys via host.docker.internal:9345
+      # while the issuer stays localhost:9345 (= browser token). This is
+      # the core of the solution for "client via localhost, backend in container".
+      KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
+      KC_HOSTNAME_STRICT: "false"
+      KC_HTTP_ENABLED: "true"
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN_USER}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: postgres
+      KC_DB_URL: "jdbc:postgresql://keycloak-postgres:5432/${KEYCLOAK_POSTGRES_DATABASE}"
+      KC_DB_USERNAME: ${KEYCLOAK_POSTGRES_USER}
+      KC_DB_PASSWORD: ${KEYCLOAK_POSTGRES_PASSWORD}
+    volumes:
+      # Path relative to docker-compose-files/ -> ../keycloak/ = <repo>/keycloak/
+      - type: bind
+        source: ../keycloak/export
+        target: /opt/keycloak/data/export
+      - type: bind
+        source: ../keycloak/gaeco-realm.json
+        target: /opt/keycloak/data/import/realm-export.json
+        read_only: true
+    depends_on:
+      keycloak-postgres:
+        condition: service_healthy
+    networks:
+      - keycloak-internal
+      - gaeco-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "bash",
+          "-c",
+          "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET / HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q 'HTTP'",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 50
+
+networks:
+  keycloak-internal:
+  gaeco-network:
+    name: gaeco-local

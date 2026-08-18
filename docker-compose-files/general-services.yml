@@ -1,0 +1,103 @@
+# Copyright (c) 2025 Ekkodale GmbH. All rights reserved.
+#
+# This file is part of the gaeco platform system.
+#
+# Use of this file is governed by the terms of the license
+# in LICENSE.md at the root of this repository.
+# Unauthorized copying, modification, distribution, or use of this file,
+# via any medium, is strictly prohibited except as expressly permitted
+# under that license.
+
+# =============================================================================
+# Infrastructure: Kafka (broker + UI), MinIO (object storage), Aspire (monitoring)
+# =============================================================================
+# The service names are fixed (gaeco-broker / gaeco-minio / gaeco-monitor-aspire),
+# because all other services reference them in their env vars.
+# =============================================================================
+services:
+  gaeco-broker:
+    image: apache/kafka:3.7.2
+    ports:
+      - "9092:9092"      # external access (e.g. localhost:9092)
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT"
+      KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:29092,CONTROLLER://0.0.0.0:29093,EXTERNAL://0.0.0.0:9092"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://gaeco-broker:29092,EXTERNAL://localhost:9092"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "PLAINTEXT"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@gaeco-broker:29093"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_LOG_DIRS: "/tmp/kraft-combined-logs"
+      CLUSTER_ID: "MkU3OEVBNTcwNTJENDM2Qk"
+      KAFKA_LOG_RETENTION_MS: ${KAFKA_LOG_RETENTION_MS}
+      KAFKA_LOG_RETENTION_BYTES: ${KAFKA_LOG_RETENTION_BYTES}
+      KAFKA_MESSAGE_MAX_BYTES: ${KAFKA_MESSAGE_MAX_BYTES}
+      KAFKA_REPLICA_FETCH_MAX_BYTES: ${KAFKA_REPLICA_FETCH_MAX_BYTES}
+    networks:
+      - gaeco-network
+    healthcheck:
+      test: ["CMD", "bash", "-c", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:29092 2>&1 | grep -q broker"]
+      interval: 10s
+      timeout: 10s
+      retries: 50
+
+  gaeco-minio:
+    image: minio/minio:RELEASE.2025-02-28T09-55-16Z-cpuv1
+    command: server /data --console-address ":9001"
+    ports:
+      - "${MINIO_API_PORT}:9000"       # S3 API
+      - "${MINIO_CONSOLE_PORT}:9001"   # Web console
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/minio/data
+        target: /data
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/minio/config
+        target: /root/.minio
+    networks:
+      - gaeco-network
+    healthcheck:
+      test: ["CMD", "bash", "-c", "timeout 2 bash -c '</dev/tcp/localhost/9000' 2>/dev/null && echo healthy"]
+      interval: 10s
+      timeout: 5s
+      retries: 50
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:v0.7.2
+    ports:
+      - "${KAFKA_UI_PORT}:8080"
+    depends_on:
+      gaeco-broker:
+        condition: service_healthy
+    environment:
+      KAFKA_CLUSTERS_0_NAME: gaeco-kafka
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: gaeco-broker:29092
+      KAFKA_CLUSTERS_0_KRAFT_ENABLED: "true"
+      AUTH_TYPE: "LOGIN_FORM"
+      SPRING_SECURITY_USER_NAME: ${KAFKA_UI_USERNAME}
+      SPRING_SECURITY_USER_PASSWORD: ${KAFKA_UI_PASSWORD}
+    networks:
+      - gaeco-network
+
+  gaeco-monitor-aspire:
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:9.0
+    restart: always
+    ports:
+      - "${ASPIRE_PORT}:18888"   # Dashboard UI (OTLP ingest runs internally on 18889)
+    environment:
+      DASHBOARD__FRONTEND__AUTHMODE: BrowserToken
+      DASHBOARD__FRONTEND__BROWSERTOKEN: ${ASPIRE_TOKEN}
+    networks:
+      - gaeco-network
+
+networks:
+  gaeco-network:
+    name: gaeco-local

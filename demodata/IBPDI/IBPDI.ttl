@@ -1,0 +1,2323 @@
+﻿@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ibpdi: <https://ibpdi.org/ontology/2.0/> .
+
+<https://ibpdi.org/ontology/2.0/> a rdfs:Resource ;
+    rdfs:label "IBPDI Real Estate CDM v2.0" ;
+    dcterms:created "2026-06-08" ;
+    dcterms:publisher "Ekkodale GmbH" .
+
+### Classes
+
+ibpdi:AccessPanel a rdfs:Class ;
+    rdfs:label "AccessPanel" ;
+    rdfs:comment "IBPDI Real Estate CDM class AccessPanel." .
+
+ibpdi:Account a rdfs:Class ;
+    rdfs:label "Account" ;
+    rdfs:comment "IBPDI Real Estate CDM class Account." .
+
+ibpdi:Address a rdfs:Class ;
+    rdfs:label "Address" ;
+    rdfs:comment "IBPDI Real Estate CDM class Address." .
+
+ibpdi:AirCompressor a rdfs:Class ;
+    rdfs:label "AirCompressor" ;
+    rdfs:comment "IBPDI Real Estate CDM class AirCompressor." .
+
+ibpdi:AirFilter a rdfs:Class ;
+    rdfs:label "AirFilter" ;
+    rdfs:comment "IBPDI Real Estate CDM class AirFilter." .
+
+ibpdi:AirHandlingUnit a rdfs:Class ;
+    rdfs:label "AirHandlingUnit" ;
+    rdfs:comment "IBPDI Real Estate CDM class AirHandlingUnit." .
+
+ibpdi:AreaMeasurement a rdfs:Class ;
+    rdfs:label "AreaMeasurement" ;
+    rdfs:comment "IBPDI Real Estate CDM class AreaMeasurement." .
+
+ibpdi:AutomaticTransferSwitch a rdfs:Class ;
+    rdfs:label "AutomaticTransferSwitch" ;
+    rdfs:comment "IBPDI Real Estate CDM class AutomaticTransferSwitch." .
+
+ibpdi:AvailableResource a rdfs:Class ;
+    rdfs:label "AvailableResource" ;
+    rdfs:comment "IBPDI Real Estate CDM class AvailableResource." .
+
+ibpdi:BacNetController a rdfs:Class ;
+    rdfs:label "BacNetController" ;
+    rdfs:comment "IBPDI Real Estate CDM class BacNetController." .
+
+ibpdi:Boiler a rdfs:Class ;
+    rdfs:label "Boiler" ;
+    rdfs:comment "IBPDI Real Estate CDM class Boiler." .
+
+ibpdi:Booking a rdfs:Class ;
+    rdfs:label "Booking" ;
+    rdfs:comment "IBPDI Real Estate CDM class Booking." .
+
+ibpdi:Building a rdfs:Class ;
+    rdfs:label "Building" ;
+    rdfs:comment "IBPDI Real Estate CDM class Building." .
+
+ibpdi:CeilingFan a rdfs:Class ;
+    rdfs:label "CeilingFan" ;
+    rdfs:comment "IBPDI Real Estate CDM class CeilingFan." .
+
+ibpdi:Certificate a rdfs:Class ;
+    rdfs:label "Certificate" ;
+    rdfs:comment "IBPDI Real Estate CDM class Certificate." .
+
+ibpdi:Characteristic a rdfs:Class ;
+    rdfs:label "Characteristic" ;
+    rdfs:comment "IBPDI Real Estate CDM class Characteristic." .
+
+ibpdi:Chiller a rdfs:Class ;
+    rdfs:label "Chiller" ;
+    rdfs:comment "IBPDI Real Estate CDM class Chiller." .
+
+ibpdi:Climate a rdfs:Class ;
+    rdfs:label "Climate" ;
+    rdfs:comment "IBPDI Real Estate CDM class Climate." .
+
+ibpdi:CoGenerator a rdfs:Class ;
+    rdfs:label "CoGenerator" ;
+    rdfs:comment "IBPDI Real Estate CDM class CoGenerator." .
+
+ibpdi:Component a rdfs:Class ;
+    rdfs:label "Component" ;
+    rdfs:comment "IBPDI Real Estate CDM class Component." .
+
+ibpdi:ComponentType a rdfs:Class ;
+    rdfs:label "ComponentType" ;
+    rdfs:comment "IBPDI Real Estate CDM class ComponentType." .
+
+ibpdi:CondensingUnit a rdfs:Class ;
+    rdfs:label "CondensingUnit" ;
+    rdfs:comment "IBPDI Real Estate CDM class CondensingUnit." .
+
+ibpdi:Contact a rdfs:Class ;
+    rdfs:label "Contact" ;
+    rdfs:comment "IBPDI Real Estate CDM class Contact." .
+
+ibpdi:Controller a rdfs:Class ;
+    rdfs:label "Controller" ;
+    rdfs:comment "IBPDI Real Estate CDM class Controller." .
+
+ibpdi:CoolingTower a rdfs:Class ;
+    rdfs:label "CoolingTower" ;
+    rdfs:comment "IBPDI Real Estate CDM class CoolingTower." .
+
+ibpdi:CostCenter a rdfs:Class ;
+    rdfs:label "CostCenter" ;
+    rdfs:comment "IBPDI Real Estate CDM class CostCenter." .
+
+ibpdi:CustomerFile a rdfs:Class ;
+    rdfs:label "CustomerFile" ;
+    rdfs:comment "IBPDI Real Estate CDM class CustomerFile." .
+
+ibpdi:Damper a rdfs:Class ;
+    rdfs:label "Damper" ;
+    rdfs:comment "IBPDI Real Estate CDM class Damper." .
+
+ibpdi:DataNetworkEquipment a rdfs:Class ;
+    rdfs:label "DataNetworkEquipment" ;
+    rdfs:comment "IBPDI Real Estate CDM class DataNetworkEquipment." .
+
+ibpdi:DataNetworkSubComponent a rdfs:Class ;
+    rdfs:label "DataNetworkSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class DataNetworkSubComponent." .
+
+ibpdi:Dunning a rdfs:Class ;
+    rdfs:label "Dunning" ;
+    rdfs:comment "IBPDI Real Estate CDM class Dunning." .
+
+ibpdi:ElectricalDistributionEquipmentSubComponent a rdfs:Class ;
+    rdfs:label "ElectricalDistributionEquipmentSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalDistributionEquipmentSubComponent." .
+
+ibpdi:ElectricalMeter a rdfs:Class ;
+    rdfs:label "ElectricalMeter" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalMeter." .
+
+ibpdi:ElectricalPanelBoard a rdfs:Class ;
+    rdfs:label "ElectricalPanelBoard" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalPanelBoard." .
+
+ibpdi:ElectricalPanelBoardMcb a rdfs:Class ;
+    rdfs:label "ElectricalPanelBoardMcb" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalPanelBoardMcb." .
+
+ibpdi:ElectricalPanelBoardMlo a rdfs:Class ;
+    rdfs:label "ElectricalPanelBoardMlo" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalPanelBoardMlo." .
+
+ibpdi:ElectricalSystem a rdfs:Class ;
+    rdfs:label "ElectricalSystem" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalSystem." .
+
+ibpdi:ElectricalVehicleChargingStation a rdfs:Class ;
+    rdfs:label "ElectricalVehicleChargingStation" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectricalVehicleChargingStation." .
+
+ibpdi:ElectronicSafetyAndSecuritySystem a rdfs:Class ;
+    rdfs:label "ElectronicSafetyAndSecuritySystem" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElectronicSafetyAndSecuritySystem." .
+
+ibpdi:Elevator a rdfs:Class ;
+    rdfs:label "Elevator" ;
+    rdfs:comment "IBPDI Real Estate CDM class Elevator." .
+
+ibpdi:ElevatorMachine a rdfs:Class ;
+    rdfs:label "ElevatorMachine" ;
+    rdfs:comment "IBPDI Real Estate CDM class ElevatorMachine." .
+
+ibpdi:EmissionFactor a rdfs:Class ;
+    rdfs:label "EmissionFactor" ;
+    rdfs:comment "IBPDI Real Estate CDM class EmissionFactor." .
+
+ibpdi:Escalator a rdfs:Class ;
+    rdfs:label "Escalator" ;
+    rdfs:comment "IBPDI Real Estate CDM class Escalator." .
+
+ibpdi:EthernetSwitchPort a rdfs:Class ;
+    rdfs:label "EthernetSwitchPort" ;
+    rdfs:comment "IBPDI Real Estate CDM class EthernetSwitchPort." .
+
+ibpdi:FanCoilUnit a rdfs:Class ;
+    rdfs:label "FanCoilUnit" ;
+    rdfs:comment "IBPDI Real Estate CDM class FanCoilUnit." .
+
+ibpdi:FanCoilUnitReheat a rdfs:Class ;
+    rdfs:label "FanCoilUnitReheat" ;
+    rdfs:comment "IBPDI Real Estate CDM class FanCoilUnitReheat." .
+
+ibpdi:FanPoweredBox a rdfs:Class ;
+    rdfs:label "FanPoweredBox" ;
+    rdfs:comment "IBPDI Real Estate CDM class FanPoweredBox." .
+
+ibpdi:FanPoweredBoxReheat a rdfs:Class ;
+    rdfs:label "FanPoweredBoxReheat" ;
+    rdfs:comment "IBPDI Real Estate CDM class FanPoweredBoxReheat." .
+
+ibpdi:Faucet a rdfs:Class ;
+    rdfs:label "Faucet" ;
+    rdfs:comment "IBPDI Real Estate CDM class Faucet." .
+
+ibpdi:FireDamper a rdfs:Class ;
+    rdfs:label "FireDamper" ;
+    rdfs:comment "IBPDI Real Estate CDM class FireDamper." .
+
+ibpdi:FirePump a rdfs:Class ;
+    rdfs:label "FirePump" ;
+    rdfs:comment "IBPDI Real Estate CDM class FirePump." .
+
+ibpdi:FireSprinklerHead a rdfs:Class ;
+    rdfs:label "FireSprinklerHead" ;
+    rdfs:comment "IBPDI Real Estate CDM class FireSprinklerHead." .
+
+ibpdi:Floor a rdfs:Class ;
+    rdfs:label "Floor" ;
+    rdfs:comment "IBPDI Real Estate CDM class Floor." .
+
+ibpdi:FlushometerValve a rdfs:Class ;
+    rdfs:label "FlushometerValve" ;
+    rdfs:comment "IBPDI Real Estate CDM class FlushometerValve." .
+
+ibpdi:GasMeter a rdfs:Class ;
+    rdfs:label "GasMeter" ;
+    rdfs:comment "IBPDI Real Estate CDM class GasMeter." .
+
+ibpdi:Gateway a rdfs:Class ;
+    rdfs:label "Gateway" ;
+    rdfs:comment "IBPDI Real Estate CDM class Gateway." .
+
+ibpdi:Generator a rdfs:Class ;
+    rdfs:label "Generator" ;
+    rdfs:comment "IBPDI Real Estate CDM class Generator." .
+
+ibpdi:GeoCoordinate a rdfs:Class ;
+    rdfs:label "GeoCoordinate" ;
+    rdfs:comment "IBPDI Real Estate CDM class GeoCoordinate." .
+
+ibpdi:GhgEmission a rdfs:Class ;
+    rdfs:label "GhgEmission" ;
+    rdfs:comment "IBPDI Real Estate CDM class GhgEmission." .
+
+ibpdi:HvacFan a rdfs:Class ;
+    rdfs:label "HvacFan" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacFan." .
+
+ibpdi:HvacFanSubComponent a rdfs:Class ;
+    rdfs:label "HvacFanSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacFanSubComponent." .
+
+ibpdi:HvacHeatTracing a rdfs:Class ;
+    rdfs:label "HvacHeatTracing" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacHeatTracing." .
+
+ibpdi:HvacPump a rdfs:Class ;
+    rdfs:label "HvacPump" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacPump." .
+
+ibpdi:HvacShutOffValve a rdfs:Class ;
+    rdfs:label "HvacShutOffValve" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacShutOffValve." .
+
+ibpdi:HvacSystem a rdfs:Class ;
+    rdfs:label "HvacSystem" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacSystem." .
+
+ibpdi:HvacTank a rdfs:Class ;
+    rdfs:label "HvacTank" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacTank." .
+
+ibpdi:HvacValve a rdfs:Class ;
+    rdfs:label "HvacValve" ;
+    rdfs:comment "IBPDI Real Estate CDM class HvacValve." .
+
+ibpdi:IctHardware a rdfs:Class ;
+    rdfs:label "IctHardware" ;
+    rdfs:comment "IBPDI Real Estate CDM class IctHardware." .
+
+ibpdi:IndividualAccount a rdfs:Class ;
+    rdfs:label "IndividualAccount" ;
+    rdfs:comment "IBPDI Real Estate CDM class IndividualAccount." .
+
+ibpdi:InformationAndCommunicationSystem a rdfs:Class ;
+    rdfs:label "InformationAndCommunicationSystem" ;
+    rdfs:comment "IBPDI Real Estate CDM class InformationAndCommunicationSystem." .
+
+ibpdi:ItRack a rdfs:Class ;
+    rdfs:label "ItRack" ;
+    rdfs:comment "IBPDI Real Estate CDM class ItRack." .
+
+ibpdi:JockeyPump a rdfs:Class ;
+    rdfs:label "JockeyPump" ;
+    rdfs:comment "IBPDI Real Estate CDM class JockeyPump." .
+
+ibpdi:Land a rdfs:Class ;
+    rdfs:label "Land" ;
+    rdfs:comment "IBPDI Real Estate CDM class Land." .
+
+ibpdi:LightingSystem a rdfs:Class ;
+    rdfs:label "LightingSystem" ;
+    rdfs:comment "IBPDI Real Estate CDM class LightingSystem." .
+
+ibpdi:Luminaire a rdfs:Class ;
+    rdfs:label "Luminaire" ;
+    rdfs:comment "IBPDI Real Estate CDM class Luminaire." .
+
+ibpdi:ModbusController a rdfs:Class ;
+    rdfs:label "ModbusController" ;
+    rdfs:comment "IBPDI Real Estate CDM class ModbusController." .
+
+ibpdi:MovingWalkway a rdfs:Class ;
+    rdfs:label "MovingWalkway" ;
+    rdfs:comment "IBPDI Real Estate CDM class MovingWalkway." .
+
+ibpdi:Neighbourhood a rdfs:Class ;
+    rdfs:label "Neighbourhood" ;
+    rdfs:comment "IBPDI Real Estate CDM class Neighbourhood." .
+
+ibpdi:OperationalMeasurement a rdfs:Class ;
+    rdfs:label "OperationalMeasurement" ;
+    rdfs:comment "IBPDI Real Estate CDM class OperationalMeasurement." .
+
+ibpdi:Organisation a rdfs:Class ;
+    rdfs:label "Organisation" ;
+    rdfs:comment "IBPDI Real Estate CDM class Organisation." .
+
+ibpdi:PlumbingExpansionTank a rdfs:Class ;
+    rdfs:label "PlumbingExpansionTank" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingExpansionTank." .
+
+ibpdi:PlumbingPump a rdfs:Class ;
+    rdfs:label "PlumbingPump" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingPump." .
+
+ibpdi:PlumbingPumpSubComponent a rdfs:Class ;
+    rdfs:label "PlumbingPumpSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingPumpSubComponent." .
+
+ibpdi:PlumbingShutOffValve a rdfs:Class ;
+    rdfs:label "PlumbingShutOffValve" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingShutOffValve." .
+
+ibpdi:PlumbingStorageTank a rdfs:Class ;
+    rdfs:label "PlumbingStorageTank" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingStorageTank." .
+
+ibpdi:PlumbingSystem a rdfs:Class ;
+    rdfs:label "PlumbingSystem" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingSystem." .
+
+ibpdi:PlumbingTank a rdfs:Class ;
+    rdfs:label "PlumbingTank" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingTank." .
+
+ibpdi:PlumbingValve a rdfs:Class ;
+    rdfs:label "PlumbingValve" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingValve." .
+
+ibpdi:PlumbingValveSubComponent a rdfs:Class ;
+    rdfs:label "PlumbingValveSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class PlumbingValveSubComponent." .
+
+ibpdi:Portfolio a rdfs:Class ;
+    rdfs:label "Portfolio" ;
+    rdfs:comment "IBPDI Real Estate CDM class Portfolio." .
+
+ibpdi:PortfolioStrategy a rdfs:Class ;
+    rdfs:label "PortfolioStrategy" ;
+    rdfs:comment "IBPDI Real Estate CDM class PortfolioStrategy." .
+
+ibpdi:RentalContract a rdfs:Class ;
+    rdfs:label "RentalContract" ;
+    rdfs:comment "IBPDI Real Estate CDM class RentalContract." .
+
+ibpdi:RentalOption a rdfs:Class ;
+    rdfs:label "RentalOption" ;
+    rdfs:comment "IBPDI Real Estate CDM class RentalOption." .
+
+ibpdi:RentalPayment a rdfs:Class ;
+    rdfs:label "RentalPayment" ;
+    rdfs:comment "IBPDI Real Estate CDM class RentalPayment." .
+
+ibpdi:RentalUnit a rdfs:Class ;
+    rdfs:label "RentalUnit" ;
+    rdfs:comment "IBPDI Real Estate CDM class RentalUnit." .
+
+ibpdi:Role a rdfs:Class ;
+    rdfs:label "Role" ;
+    rdfs:comment "IBPDI Real Estate CDM class Role." .
+
+ibpdi:Sensor a rdfs:Class ;
+    rdfs:label "Sensor" ;
+    rdfs:comment "IBPDI Real Estate CDM class Sensor." .
+
+ibpdi:SensorEquipment a rdfs:Class ;
+    rdfs:label "SensorEquipment" ;
+    rdfs:comment "IBPDI Real Estate CDM class SensorEquipment." .
+
+ibpdi:SensorMeasurement a rdfs:Class ;
+    rdfs:label "SensorMeasurement" ;
+    rdfs:comment "IBPDI Real Estate CDM class SensorMeasurement." .
+
+ibpdi:Server a rdfs:Class ;
+    rdfs:label "Server" ;
+    rdfs:comment "IBPDI Real Estate CDM class Server." .
+
+ibpdi:Site a rdfs:Class ;
+    rdfs:label "Site" ;
+    rdfs:comment "IBPDI Real Estate CDM class Site." .
+
+ibpdi:Space a rdfs:Class ;
+    rdfs:label "Space" ;
+    rdfs:comment "IBPDI Real Estate CDM class Space." .
+
+ibpdi:SprinklerHeatTracing a rdfs:Class ;
+    rdfs:label "SprinklerHeatTracing" ;
+    rdfs:comment "IBPDI Real Estate CDM class SprinklerHeatTracing." .
+
+ibpdi:SprinklerTank a rdfs:Class ;
+    rdfs:label "SprinklerTank" ;
+    rdfs:comment "IBPDI Real Estate CDM class SprinklerTank." .
+
+ibpdi:SprinklerValve a rdfs:Class ;
+    rdfs:label "SprinklerValve" ;
+    rdfs:comment "IBPDI Real Estate CDM class SprinklerValve." .
+
+ibpdi:SustainabilityIndicator a rdfs:Class ;
+    rdfs:label "SustainabilityIndicator" ;
+    rdfs:comment "IBPDI Real Estate CDM class SustainabilityIndicator." .
+
+ibpdi:System a rdfs:Class ;
+    rdfs:label "System" ;
+    rdfs:comment "IBPDI Real Estate CDM class System." .
+
+ibpdi:Tag a rdfs:Class ;
+    rdfs:label "Tag" ;
+    rdfs:comment "IBPDI Real Estate CDM class Tag." .
+
+ibpdi:TanklessWaterHeater a rdfs:Class ;
+    rdfs:label "TanklessWaterHeater" ;
+    rdfs:comment "IBPDI Real Estate CDM class TanklessWaterHeater." .
+
+ibpdi:TanklessWaterHeaterSubComponent a rdfs:Class ;
+    rdfs:label "TanklessWaterHeaterSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class TanklessWaterHeaterSubComponent." .
+
+ibpdi:TankWaterHeater a rdfs:Class ;
+    rdfs:label "TankWaterHeater" ;
+    rdfs:comment "IBPDI Real Estate CDM class TankWaterHeater." .
+
+ibpdi:TankWaterHeaterSubComponent a rdfs:Class ;
+    rdfs:label "TankWaterHeaterSubComponent" ;
+    rdfs:comment "IBPDI Real Estate CDM class TankWaterHeaterSubComponent." .
+
+ibpdi:TenantCommunication a rdfs:Class ;
+    rdfs:label "TenantCommunication" ;
+    rdfs:comment "IBPDI Real Estate CDM class TenantCommunication." .
+
+ibpdi:TerminalUnit a rdfs:Class ;
+    rdfs:label "TerminalUnit" ;
+    rdfs:comment "IBPDI Real Estate CDM class TerminalUnit." .
+
+ibpdi:ThermalMeter a rdfs:Class ;
+    rdfs:label "ThermalMeter" ;
+    rdfs:comment "IBPDI Real Estate CDM class ThermalMeter." .
+
+ibpdi:Toilet a rdfs:Class ;
+    rdfs:label "Toilet" ;
+    rdfs:comment "IBPDI Real Estate CDM class Toilet." .
+
+ibpdi:ToiletFlushometer a rdfs:Class ;
+    rdfs:label "ToiletFlushometer" ;
+    rdfs:comment "IBPDI Real Estate CDM class ToiletFlushometer." .
+
+ibpdi:ToiletTank a rdfs:Class ;
+    rdfs:label "ToiletTank" ;
+    rdfs:comment "IBPDI Real Estate CDM class ToiletTank." .
+
+ibpdi:TransferSwitch a rdfs:Class ;
+    rdfs:label "TransferSwitch" ;
+    rdfs:comment "IBPDI Real Estate CDM class TransferSwitch." .
+
+ibpdi:Transformer a rdfs:Class ;
+    rdfs:label "Transformer" ;
+    rdfs:comment "IBPDI Real Estate CDM class Transformer." .
+
+ibpdi:Unit a rdfs:Class ;
+    rdfs:label "Unit" ;
+    rdfs:comment "IBPDI Real Estate CDM class Unit." .
+
+ibpdi:UnitHeater a rdfs:Class ;
+    rdfs:label "UnitHeater" ;
+    rdfs:comment "IBPDI Real Estate CDM class UnitHeater." .
+
+ibpdi:Ups a rdfs:Class ;
+    rdfs:label "Ups" ;
+    rdfs:comment "IBPDI Real Estate CDM class Ups." .
+
+ibpdi:UrinalFlushometer a rdfs:Class ;
+    rdfs:label "UrinalFlushometer" ;
+    rdfs:comment "IBPDI Real Estate CDM class UrinalFlushometer." .
+
+ibpdi:Valuation a rdfs:Class ;
+    rdfs:label "Valuation" ;
+    rdfs:comment "IBPDI Real Estate CDM class Valuation." .
+
+ibpdi:VariableFrequencyDrive a rdfs:Class ;
+    rdfs:label "VariableFrequencyDrive" ;
+    rdfs:comment "IBPDI Real Estate CDM class VariableFrequencyDrive." .
+
+ibpdi:VavBoxReheat a rdfs:Class ;
+    rdfs:label "VavBoxReheat" ;
+    rdfs:comment "IBPDI Real Estate CDM class VavBoxReheat." .
+
+ibpdi:WaterFiltration a rdfs:Class ;
+    rdfs:label "WaterFiltration" ;
+    rdfs:comment "IBPDI Real Estate CDM class WaterFiltration." .
+
+ibpdi:WaterHeater a rdfs:Class ;
+    rdfs:label "WaterHeater" ;
+    rdfs:comment "IBPDI Real Estate CDM class WaterHeater." .
+
+ibpdi:WaterMeter a rdfs:Class ;
+    rdfs:label "WaterMeter" ;
+    rdfs:comment "IBPDI Real Estate CDM class WaterMeter." .
+
+ibpdi:WirelessAccessPoint a rdfs:Class ;
+    rdfs:label "WirelessAccessPoint" ;
+    rdfs:comment "IBPDI Real Estate CDM class WirelessAccessPoint." .
+
+ibpdi:WorkArea a rdfs:Class ;
+    rdfs:label "WorkArea" ;
+    rdfs:comment "IBPDI Real Estate CDM class WorkArea." .
+
+ibpdi:WorkAreaType a rdfs:Class ;
+    rdfs:label "WorkAreaType" ;
+    rdfs:comment "IBPDI Real Estate CDM class WorkAreaType." .
+
+ibpdi:Workspace a rdfs:Class ;
+    rdfs:label "Workspace" ;
+    rdfs:comment "IBPDI Real Estate CDM class Workspace." .
+
+### Direct binary relations (2-column junction tables)
+
+ibpdi:addressHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Address has Building" ;
+    rdfs:comment "Derived from junction table AddressBuilding." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:addressHasContact a owl:ObjectProperty ;
+    rdfs:label "Address has Contact" ;
+    rdfs:comment "Derived from junction table AddressContact." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:addressHasLand a owl:ObjectProperty ;
+    rdfs:label "Address has Land" ;
+    rdfs:comment "Derived from junction table AddressLand." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:addressHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Address has Organisation" ;
+    rdfs:comment "Derived from junction table AddressOrganisation." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:addressHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "Address has RentalUnit" ;
+    rdfs:comment "Derived from junction table AddressRentalUnit." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:addressHasSite a owl:ObjectProperty ;
+    rdfs:label "Address has Site" ;
+    rdfs:comment "Derived from junction table AddressSite." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:areaMeasurementHasBuilding a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has Building" ;
+    rdfs:comment "Derived from junction table AreaMeasurementBuilding." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:areaMeasurementHasFloor a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has Floor" ;
+    rdfs:comment "Derived from junction table AreaMeasurementFloor." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:areaMeasurementHasLand a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has Land" ;
+    rdfs:comment "Derived from junction table AreaMeasurementLand." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:areaMeasurementHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has RentalUnit" ;
+    rdfs:comment "Derived from junction table AreaMeasurementRentalUnit." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:areaMeasurementHasSite a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has Site" ;
+    rdfs:comment "Derived from junction table AreaMeasurementSite." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:areaMeasurementHasSpace a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has Space" ;
+    rdfs:comment "Derived from junction table AreaMeasurementSpace." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:areaMeasurementHasUnit a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has Unit" ;
+    rdfs:comment "Derived from junction table AreaMeasurementUnit." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:availableResourceHasWorkspace a owl:ObjectProperty ;
+    rdfs:label "AvailableResource has Workspace" ;
+    rdfs:comment "Derived from junction table AvailableResourceWorkspace." ;
+    rdfs:domain ibpdi:AvailableResource ;
+    rdfs:range  ibpdi:Workspace .
+
+ibpdi:bookingHasWorkspace a owl:ObjectProperty ;
+    rdfs:label "Booking has Workspace" ;
+    rdfs:comment "Derived from junction table BookingWorkspace." ;
+    rdfs:domain ibpdi:Booking ;
+    rdfs:range  ibpdi:Workspace .
+
+ibpdi:certificateHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Certificate has Building" ;
+    rdfs:comment "Derived from junction table CertificateBuilding." ;
+    rdfs:domain ibpdi:Certificate ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:certificateHasComponent a owl:ObjectProperty ;
+    rdfs:label "Certificate has Component" ;
+    rdfs:comment "Derived from junction table CertificateComponent." ;
+    rdfs:domain ibpdi:Certificate ;
+    rdfs:range  ibpdi:Component .
+
+ibpdi:certificateHasSystem a owl:ObjectProperty ;
+    rdfs:label "Certificate has System" ;
+    rdfs:comment "Derived from junction table CertificateSystem." ;
+    rdfs:domain ibpdi:Certificate ;
+    rdfs:range  ibpdi:System .
+
+ibpdi:certificateHasValuation a owl:ObjectProperty ;
+    rdfs:label "Certificate has Valuation" ;
+    rdfs:comment "Derived from junction table CertificateValuation." ;
+    rdfs:domain ibpdi:Certificate ;
+    rdfs:range  ibpdi:Valuation .
+
+ibpdi:characteristicHasNeighbourhood a owl:ObjectProperty ;
+    rdfs:label "Characteristic has Neighbourhood" ;
+    rdfs:comment "Derived from junction table CharacteristicNeighbourhood." ;
+    rdfs:domain ibpdi:Characteristic ;
+    rdfs:range  ibpdi:Neighbourhood .
+
+ibpdi:characteristicHasWorkspace a owl:ObjectProperty ;
+    rdfs:label "Characteristic has Workspace" ;
+    rdfs:comment "Derived from junction table CharacteristicWorkspace." ;
+    rdfs:domain ibpdi:Characteristic ;
+    rdfs:range  ibpdi:Workspace .
+
+ibpdi:climateHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Climate has Building" ;
+    rdfs:comment "Derived from junction table ClimateBuilding." ;
+    rdfs:domain ibpdi:Climate ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:climateHasSite a owl:ObjectProperty ;
+    rdfs:label "Climate has Site" ;
+    rdfs:comment "Derived from junction table ClimateSite." ;
+    rdfs:domain ibpdi:Climate ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:componentHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Component has Building" ;
+    rdfs:comment "Derived from junction table ComponentBuilding." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:componentHasFloor a owl:ObjectProperty ;
+    rdfs:label "Component has Floor" ;
+    rdfs:comment "Derived from junction table ComponentFloor." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:componentHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "Component has RentalUnit" ;
+    rdfs:comment "Derived from junction table ComponentRentalUnit." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:componentHasSite a owl:ObjectProperty ;
+    rdfs:label "Component has Site" ;
+    rdfs:comment "Derived from junction table ComponentSite." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:componentHasSpace a owl:ObjectProperty ;
+    rdfs:label "Component has Space" ;
+    rdfs:comment "Derived from junction table ComponentSpace." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:componentHasSystem a owl:ObjectProperty ;
+    rdfs:label "Component has System" ;
+    rdfs:comment "Derived from junction table ComponentSystem." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:System .
+
+ibpdi:componentHasUnit a owl:ObjectProperty ;
+    rdfs:label "Component has Unit" ;
+    rdfs:comment "Derived from junction table ComponentUnit." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:costCenterHasBuilding a owl:ObjectProperty ;
+    rdfs:label "CostCenter has Building" ;
+    rdfs:comment "Derived from junction table CostCenterBuilding." ;
+    rdfs:domain ibpdi:CostCenter ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:costCenterHasLand a owl:ObjectProperty ;
+    rdfs:label "CostCenter has Land" ;
+    rdfs:comment "Derived from junction table CostCenterLand." ;
+    rdfs:domain ibpdi:CostCenter ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:costCenterHasPortfolio a owl:ObjectProperty ;
+    rdfs:label "CostCenter has Portfolio" ;
+    rdfs:comment "Derived from junction table CostCenterPortfolio." ;
+    rdfs:domain ibpdi:CostCenter ;
+    rdfs:range  ibpdi:Portfolio .
+
+ibpdi:costCenterHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "CostCenter has RentalUnit" ;
+    rdfs:comment "Derived from junction table CostCenterRentalUnit." ;
+    rdfs:domain ibpdi:CostCenter ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:costCenterHasSite a owl:ObjectProperty ;
+    rdfs:label "CostCenter has Site" ;
+    rdfs:comment "Derived from junction table CostCenterSite." ;
+    rdfs:domain ibpdi:CostCenter ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:customerFileHasWorkArea a owl:ObjectProperty ;
+    rdfs:label "CustomerFile has WorkArea" ;
+    rdfs:comment "Derived from junction table CustomerFileWorkArea." ;
+    rdfs:domain ibpdi:CustomerFile ;
+    rdfs:range  ibpdi:WorkArea .
+
+ibpdi:customerFileHasWorkspace a owl:ObjectProperty ;
+    rdfs:label "CustomerFile has Workspace" ;
+    rdfs:comment "Derived from junction table CustomerFileWorkspace." ;
+    rdfs:domain ibpdi:CustomerFile ;
+    rdfs:range  ibpdi:Workspace .
+
+ibpdi:emissionFactorHasBuilding a owl:ObjectProperty ;
+    rdfs:label "EmissionFactor has Building" ;
+    rdfs:comment "Derived from junction table EmissionFactorBuilding." ;
+    rdfs:domain ibpdi:EmissionFactor ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:emissionFactorHasOperationalMeasurement a owl:ObjectProperty ;
+    rdfs:label "EmissionFactor has OperationalMeasurement" ;
+    rdfs:comment "Derived from junction table EmissionFactorOperationalMeasurement." ;
+    rdfs:domain ibpdi:EmissionFactor ;
+    rdfs:range  ibpdi:OperationalMeasurement .
+
+ibpdi:emissionFactorHasSite a owl:ObjectProperty ;
+    rdfs:label "EmissionFactor has Site" ;
+    rdfs:comment "Derived from junction table EmissionFactorSite." ;
+    rdfs:domain ibpdi:EmissionFactor ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:ghgEmissionHasBuilding a owl:ObjectProperty ;
+    rdfs:label "GhgEmission has Building" ;
+    rdfs:comment "Derived from junction table GhgEmissionBuilding." ;
+    rdfs:domain ibpdi:GhgEmission ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:ghgEmissionHasEmissionFactor a owl:ObjectProperty ;
+    rdfs:label "GhgEmission has EmissionFactor" ;
+    rdfs:comment "Derived from junction table GhgEmissionEmissionFactor." ;
+    rdfs:domain ibpdi:GhgEmission ;
+    rdfs:range  ibpdi:EmissionFactor .
+
+ibpdi:ghgEmissionHasSite a owl:ObjectProperty ;
+    rdfs:label "GhgEmission has Site" ;
+    rdfs:comment "Derived from junction table GhgEmissionSite." ;
+    rdfs:domain ibpdi:GhgEmission ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:individualAccountHasBuilding a owl:ObjectProperty ;
+    rdfs:label "IndividualAccount has Building" ;
+    rdfs:comment "Derived from junction table IndividualAccountBuilding." ;
+    rdfs:domain ibpdi:IndividualAccount ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:individualAccountHasPortfolio a owl:ObjectProperty ;
+    rdfs:label "IndividualAccount has Portfolio" ;
+    rdfs:comment "Derived from junction table IndividualAccountPortfolio." ;
+    rdfs:domain ibpdi:IndividualAccount ;
+    rdfs:range  ibpdi:Portfolio .
+
+ibpdi:individualAccountHasSite a owl:ObjectProperty ;
+    rdfs:label "IndividualAccount has Site" ;
+    rdfs:comment "Derived from junction table IndividualAccountSite." ;
+    rdfs:domain ibpdi:IndividualAccount ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:neighbourhoodHasWorkspace a owl:ObjectProperty ;
+    rdfs:label "Neighbourhood has Workspace" ;
+    rdfs:comment "Derived from junction table NeighbourhoodWorkspace." ;
+    rdfs:domain ibpdi:Neighbourhood ;
+    rdfs:range  ibpdi:Workspace .
+
+ibpdi:operationalMeasurementHasBuilding a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Building" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementBuilding." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:operationalMeasurementHasFloor a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Floor" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementFloor." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:operationalMeasurementHasLand a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Land" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementLand." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:operationalMeasurementHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has RentalUnit" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementRentalUnit." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:operationalMeasurementHasSite a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Site" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementSite." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:operationalMeasurementHasSpace a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Space" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementSpace." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:operationalMeasurementHasUnit a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Unit" ;
+    rdfs:comment "Derived from junction table OperationalMeasurementUnit." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:portfolioHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Portfolio has Building" ;
+    rdfs:comment "Derived from junction table PortfolioBuilding." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:portfolioHasLand a owl:ObjectProperty ;
+    rdfs:label "Portfolio has Land" ;
+    rdfs:comment "Derived from junction table PortfolioLand." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:portfolioHasSite a owl:ObjectProperty ;
+    rdfs:label "Portfolio has Site" ;
+    rdfs:comment "Derived from junction table PortfolioSite." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:portfolioHasUnit a owl:ObjectProperty ;
+    rdfs:label "Portfolio has Unit" ;
+    rdfs:comment "Derived from junction table PortfolioUnit." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:rentalContractHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "RentalContract has RentalUnit" ;
+    rdfs:comment "Derived from junction table RentalContractRentalUnit." ;
+    rdfs:domain ibpdi:RentalContract ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:rentalUnitHasBuilding a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Building" ;
+    rdfs:comment "Derived from junction table RentalUnitBuilding." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:rentalUnitHasFloor a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Floor" ;
+    rdfs:comment "Derived from junction table RentalUnitFloor." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:rentalUnitHasLand a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Land" ;
+    rdfs:comment "Derived from junction table RentalUnitLand." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:rentalUnitHasSite a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Site" ;
+    rdfs:comment "Derived from junction table RentalUnitSite." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:rentalUnitHasSpace a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Space" ;
+    rdfs:comment "Derived from junction table RentalUnitSpace." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:rentalUnitHasUnit a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Unit" ;
+    rdfs:comment "Derived from junction table RentalUnitUnit." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:sensorHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Sensor has Building" ;
+    rdfs:comment "Derived from junction table SensorBuilding." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:sensorHasComponent a owl:ObjectProperty ;
+    rdfs:label "Sensor has Component" ;
+    rdfs:comment "Derived from junction table SensorComponent." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Component .
+
+ibpdi:sensorHasFloor a owl:ObjectProperty ;
+    rdfs:label "Sensor has Floor" ;
+    rdfs:comment "Derived from junction table SensorFloor." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:sensorHasLand a owl:ObjectProperty ;
+    rdfs:label "Sensor has Land" ;
+    rdfs:comment "Derived from junction table SensorLand." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:sensorHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "Sensor has RentalUnit" ;
+    rdfs:comment "Derived from junction table SensorRentalUnit." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:sensorHasSite a owl:ObjectProperty ;
+    rdfs:label "Sensor has Site" ;
+    rdfs:comment "Derived from junction table SensorSite." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:sensorHasSpace a owl:ObjectProperty ;
+    rdfs:label "Sensor has Space" ;
+    rdfs:comment "Derived from junction table SensorSpace." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:sensorHasUnit a owl:ObjectProperty ;
+    rdfs:label "Sensor has Unit" ;
+    rdfs:comment "Derived from junction table SensorUnit." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:sustainabilityIndicatorHasEmissionFactor a owl:ObjectProperty ;
+    rdfs:label "SustainabilityIndicator has EmissionFactor" ;
+    rdfs:comment "Derived from junction table SustainabilityIndicatorEmissionFactor." ;
+    rdfs:domain ibpdi:SustainabilityIndicator ;
+    rdfs:range  ibpdi:EmissionFactor .
+
+ibpdi:systemHasBuilding a owl:ObjectProperty ;
+    rdfs:label "System has Building" ;
+    rdfs:comment "Derived from junction table SystemBuilding." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:systemHasFloor a owl:ObjectProperty ;
+    rdfs:label "System has Floor" ;
+    rdfs:comment "Derived from junction table SystemFloor." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:systemHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "System has RentalUnit" ;
+    rdfs:comment "Derived from junction table SystemRentalUnit." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:systemHasSite a owl:ObjectProperty ;
+    rdfs:label "System has Site" ;
+    rdfs:comment "Derived from junction table SystemSite." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:systemHasSpace a owl:ObjectProperty ;
+    rdfs:label "System has Space" ;
+    rdfs:comment "Derived from junction table SystemSpace." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:systemHasUnit a owl:ObjectProperty ;
+    rdfs:label "System has Unit" ;
+    rdfs:comment "Derived from junction table SystemUnit." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Unit .
+
+ibpdi:tagHasNeighbourhood a owl:ObjectProperty ;
+    rdfs:label "Tag has Neighbourhood" ;
+    rdfs:comment "Derived from junction table TagNeighbourhood." ;
+    rdfs:domain ibpdi:Tag ;
+    rdfs:range  ibpdi:Neighbourhood .
+
+ibpdi:unitHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Unit has Building" ;
+    rdfs:comment "Derived from junction table UnitBuilding." ;
+    rdfs:domain ibpdi:Unit ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:unitHasFloor a owl:ObjectProperty ;
+    rdfs:label "Unit has Floor" ;
+    rdfs:comment "Derived from junction table UnitFloor." ;
+    rdfs:domain ibpdi:Unit ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:unitHasLand a owl:ObjectProperty ;
+    rdfs:label "Unit has Land" ;
+    rdfs:comment "Derived from junction table UnitLand." ;
+    rdfs:domain ibpdi:Unit ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:unitHasSite a owl:ObjectProperty ;
+    rdfs:label "Unit has Site" ;
+    rdfs:comment "Derived from junction table UnitSite." ;
+    rdfs:domain ibpdi:Unit ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:unitHasSpace a owl:ObjectProperty ;
+    rdfs:label "Unit has Space" ;
+    rdfs:comment "Derived from junction table UnitSpace." ;
+    rdfs:domain ibpdi:Unit ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:valuationHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Valuation has Building" ;
+    rdfs:comment "Derived from junction table ValuationBuilding." ;
+    rdfs:domain ibpdi:Valuation ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:valuationHasIndividualAccount a owl:ObjectProperty ;
+    rdfs:label "Valuation has IndividualAccount" ;
+    rdfs:comment "Derived from junction table ValuationIndividualAccount." ;
+    rdfs:domain ibpdi:Valuation ;
+    rdfs:range  ibpdi:IndividualAccount .
+
+ibpdi:valuationHasLand a owl:ObjectProperty ;
+    rdfs:label "Valuation has Land" ;
+    rdfs:comment "Derived from junction table ValuationLand." ;
+    rdfs:domain ibpdi:Valuation ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:valuationHasOperationalMeasurement a owl:ObjectProperty ;
+    rdfs:label "Valuation has OperationalMeasurement" ;
+    rdfs:comment "Derived from junction table ValuationOperationalMeasurement." ;
+    rdfs:domain ibpdi:Valuation ;
+    rdfs:range  ibpdi:OperationalMeasurement .
+
+ibpdi:workAreaHasFloor a owl:ObjectProperty ;
+    rdfs:label "WorkArea has Floor" ;
+    rdfs:comment "Derived from junction table WorkAreaFloor." ;
+    rdfs:domain ibpdi:WorkArea ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:workAreaHasSpace a owl:ObjectProperty ;
+    rdfs:label "WorkArea has Space" ;
+    rdfs:comment "Derived from junction table WorkAreaSpace." ;
+    rdfs:domain ibpdi:WorkArea ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:workspaceHasSensor a owl:ObjectProperty ;
+    rdfs:label "Workspace has Sensor" ;
+    rdfs:comment "Derived from junction table WorkspaceSensor." ;
+    rdfs:domain ibpdi:Workspace ;
+    rdfs:range  ibpdi:Sensor .
+
+### N-ary relations decomposed into binary pairs (3+-column junction tables)
+
+### RoleBuildingContact (Role, Building, Contact)
+ibpdi:roleBuildingContact_roleHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Role has Building (via RoleBuildingContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleBuildingContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:roleBuildingContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleBuildingContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleBuildingContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleBuildingContact_buildingHasContact a owl:ObjectProperty ;
+    rdfs:label "Building has Contact (via RoleBuildingContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleBuildingContact." ;
+    rdfs:domain ibpdi:Building ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleBuildingOrganisation (Role, Building, Organisation)
+ibpdi:roleBuildingOrganisation_roleHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Role has Building (via RoleBuildingOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleBuildingOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:roleBuildingOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleBuildingOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleBuildingOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleBuildingOrganisation_buildingHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Building has Organisation (via RoleBuildingOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleBuildingOrganisation." ;
+    rdfs:domain ibpdi:Building ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleComponentContact (Role, Component, Contact)
+ibpdi:roleComponentContact_roleHasComponent a owl:ObjectProperty ;
+    rdfs:label "Role has Component (via RoleComponentContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Component .
+
+ibpdi:roleComponentContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleComponentContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleComponentContact_componentHasContact a owl:ObjectProperty ;
+    rdfs:label "Component has Contact (via RoleComponentContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentContact." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleComponentOrganisation (Role, Component, Organisation)
+ibpdi:roleComponentOrganisation_roleHasComponent a owl:ObjectProperty ;
+    rdfs:label "Role has Component (via RoleComponentOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Component .
+
+ibpdi:roleComponentOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleComponentOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleComponentOrganisation_componentHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Component has Organisation (via RoleComponentOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentOrganisation." ;
+    rdfs:domain ibpdi:Component ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleComponentTypeContact (Role, ComponentType, Contact)
+ibpdi:roleComponentTypeContact_roleHasComponentType a owl:ObjectProperty ;
+    rdfs:label "Role has ComponentType (via RoleComponentTypeContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentTypeContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:ComponentType .
+
+ibpdi:roleComponentTypeContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleComponentTypeContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentTypeContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleComponentTypeContact_componentTypeHasContact a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Contact (via RoleComponentTypeContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentTypeContact." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleComponentTypeOrganisation (Role, ComponentType, Organisation)
+ibpdi:roleComponentTypeOrganisation_roleHasComponentType a owl:ObjectProperty ;
+    rdfs:label "Role has ComponentType (via RoleComponentTypeOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentTypeOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:ComponentType .
+
+ibpdi:roleComponentTypeOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleComponentTypeOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentTypeOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleComponentTypeOrganisation_componentTypeHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Organisation (via RoleComponentTypeOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleComponentTypeOrganisation." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleEmissionFactorContact (Role, EmissionFactor, Contact)
+ibpdi:roleEmissionFactorContact_roleHasEmissionFactor a owl:ObjectProperty ;
+    rdfs:label "Role has EmissionFactor (via RoleEmissionFactorContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleEmissionFactorContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:EmissionFactor .
+
+ibpdi:roleEmissionFactorContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleEmissionFactorContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleEmissionFactorContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleEmissionFactorContact_emissionFactorHasContact a owl:ObjectProperty ;
+    rdfs:label "EmissionFactor has Contact (via RoleEmissionFactorContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleEmissionFactorContact." ;
+    rdfs:domain ibpdi:EmissionFactor ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleEmissionFactorOrganisation (Role, EmissionFactor, Organisation)
+ibpdi:roleEmissionFactorOrganisation_roleHasEmissionFactor a owl:ObjectProperty ;
+    rdfs:label "Role has EmissionFactor (via RoleEmissionFactorOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleEmissionFactorOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:EmissionFactor .
+
+ibpdi:roleEmissionFactorOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleEmissionFactorOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleEmissionFactorOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleEmissionFactorOrganisation_emissionFactorHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "EmissionFactor has Organisation (via RoleEmissionFactorOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleEmissionFactorOrganisation." ;
+    rdfs:domain ibpdi:EmissionFactor ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleLandContact (Role, Land, Contact)
+ibpdi:roleLandContact_roleHasLand a owl:ObjectProperty ;
+    rdfs:label "Role has Land (via RoleLandContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleLandContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:roleLandContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleLandContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleLandContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleLandContact_landHasContact a owl:ObjectProperty ;
+    rdfs:label "Land has Contact (via RoleLandContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleLandContact." ;
+    rdfs:domain ibpdi:Land ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleLandOrganisation (Role, Land, Organisation)
+ibpdi:roleLandOrganisation_roleHasLand a owl:ObjectProperty ;
+    rdfs:label "Role has Land (via RoleLandOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleLandOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:roleLandOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleLandOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleLandOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleLandOrganisation_landHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Land has Organisation (via RoleLandOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleLandOrganisation." ;
+    rdfs:domain ibpdi:Land ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleOperationalMeasurementContact (Role, OperationalMeasurement, Contact)
+ibpdi:roleOperationalMeasurementContact_roleHasOperationalMeasurement a owl:ObjectProperty ;
+    rdfs:label "Role has OperationalMeasurement (via RoleOperationalMeasurementContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleOperationalMeasurementContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:OperationalMeasurement .
+
+ibpdi:roleOperationalMeasurementContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleOperationalMeasurementContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleOperationalMeasurementContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleOperationalMeasurementContact_operationalMeasurementHasContact a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Contact (via RoleOperationalMeasurementContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleOperationalMeasurementContact." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleOperationalMeasurementOrganisation (Role, OperationalMeasurement, Organisation)
+ibpdi:roleOperationalMeasurementOrganisation_roleHasOperationalMeasurement a owl:ObjectProperty ;
+    rdfs:label "Role has OperationalMeasurement (via RoleOperationalMeasurementOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleOperationalMeasurementOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:OperationalMeasurement .
+
+ibpdi:roleOperationalMeasurementOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleOperationalMeasurementOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleOperationalMeasurementOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleOperationalMeasurementOrganisation_operationalMeasurementHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has Organisation (via RoleOperationalMeasurementOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleOperationalMeasurementOrganisation." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:Organisation .
+
+### RolePortfolioContact (Role, Portfolio, Contact)
+ibpdi:rolePortfolioContact_roleHasPortfolio a owl:ObjectProperty ;
+    rdfs:label "Role has Portfolio (via RolePortfolioContact)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Portfolio .
+
+ibpdi:rolePortfolioContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RolePortfolioContact)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:rolePortfolioContact_portfolioHasContact a owl:ObjectProperty ;
+    rdfs:label "Portfolio has Contact (via RolePortfolioContact)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioContact." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:Contact .
+
+### RolePortfolioOrganisation (Role, Portfolio, Organisation)
+ibpdi:rolePortfolioOrganisation_roleHasPortfolio a owl:ObjectProperty ;
+    rdfs:label "Role has Portfolio (via RolePortfolioOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Portfolio .
+
+ibpdi:rolePortfolioOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RolePortfolioOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:rolePortfolioOrganisation_portfolioHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Portfolio has Organisation (via RolePortfolioOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioOrganisation." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:Organisation .
+
+### RolePortfolioStrategyContact (Role, PortfolioStrategy, Contact)
+ibpdi:rolePortfolioStrategyContact_roleHasPortfolioStrategy a owl:ObjectProperty ;
+    rdfs:label "Role has PortfolioStrategy (via RolePortfolioStrategyContact)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioStrategyContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:PortfolioStrategy .
+
+ibpdi:rolePortfolioStrategyContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RolePortfolioStrategyContact)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioStrategyContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:rolePortfolioStrategyContact_portfolioStrategyHasContact a owl:ObjectProperty ;
+    rdfs:label "PortfolioStrategy has Contact (via RolePortfolioStrategyContact)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioStrategyContact." ;
+    rdfs:domain ibpdi:PortfolioStrategy ;
+    rdfs:range  ibpdi:Contact .
+
+### RolePortfolioStrategyOrganisation (Role, PortfolioStrategy, Organisation)
+ibpdi:rolePortfolioStrategyOrganisation_roleHasPortfolioStrategy a owl:ObjectProperty ;
+    rdfs:label "Role has PortfolioStrategy (via RolePortfolioStrategyOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioStrategyOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:PortfolioStrategy .
+
+ibpdi:rolePortfolioStrategyOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RolePortfolioStrategyOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioStrategyOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:rolePortfolioStrategyOrganisation_portfolioStrategyHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "PortfolioStrategy has Organisation (via RolePortfolioStrategyOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RolePortfolioStrategyOrganisation." ;
+    rdfs:domain ibpdi:PortfolioStrategy ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleRentalContractContact (Role, RentalContract, Contact)
+ibpdi:roleRentalContractContact_roleHasRentalContract a owl:ObjectProperty ;
+    rdfs:label "Role has RentalContract (via RoleRentalContractContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalContractContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:RentalContract .
+
+ibpdi:roleRentalContractContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleRentalContractContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalContractContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleRentalContractContact_rentalContractHasContact a owl:ObjectProperty ;
+    rdfs:label "RentalContract has Contact (via RoleRentalContractContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalContractContact." ;
+    rdfs:domain ibpdi:RentalContract ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleRentalContractOrganisation (Role, RentalContract, Organisation)
+ibpdi:roleRentalContractOrganisation_roleHasRentalContract a owl:ObjectProperty ;
+    rdfs:label "Role has RentalContract (via RoleRentalContractOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalContractOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:RentalContract .
+
+ibpdi:roleRentalContractOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleRentalContractOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalContractOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleRentalContractOrganisation_rentalContractHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "RentalContract has Organisation (via RoleRentalContractOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalContractOrganisation." ;
+    rdfs:domain ibpdi:RentalContract ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleRentalUnitContact (Role, RentalUnit, Contact)
+ibpdi:roleRentalUnitContact_roleHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "Role has RentalUnit (via RoleRentalUnitContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalUnitContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:roleRentalUnitContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleRentalUnitContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalUnitContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleRentalUnitContact_rentalUnitHasContact a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Contact (via RoleRentalUnitContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalUnitContact." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleRentalUnitOrganisation (Role, RentalUnit, Organisation)
+ibpdi:roleRentalUnitOrganisation_roleHasRentalUnit a owl:ObjectProperty ;
+    rdfs:label "Role has RentalUnit (via RoleRentalUnitOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalUnitOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:RentalUnit .
+
+ibpdi:roleRentalUnitOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleRentalUnitOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalUnitOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleRentalUnitOrganisation_rentalUnitHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has Organisation (via RoleRentalUnitOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleRentalUnitOrganisation." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleSiteContact (Role, Site, Contact)
+ibpdi:roleSiteContact_roleHasSite a owl:ObjectProperty ;
+    rdfs:label "Role has Site (via RoleSiteContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSiteContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:roleSiteContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleSiteContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSiteContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleSiteContact_siteHasContact a owl:ObjectProperty ;
+    rdfs:label "Site has Contact (via RoleSiteContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSiteContact." ;
+    rdfs:domain ibpdi:Site ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleSiteOrganisation (Role, Site, Organisation)
+ibpdi:roleSiteOrganisation_roleHasSite a owl:ObjectProperty ;
+    rdfs:label "Role has Site (via RoleSiteOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSiteOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Site .
+
+ibpdi:roleSiteOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleSiteOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSiteOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleSiteOrganisation_siteHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Site has Organisation (via RoleSiteOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSiteOrganisation." ;
+    rdfs:domain ibpdi:Site ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleSystemContact (Role, System, Contact)
+ibpdi:roleSystemContact_roleHasSystem a owl:ObjectProperty ;
+    rdfs:label "Role has System (via RoleSystemContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSystemContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:System .
+
+ibpdi:roleSystemContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleSystemContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSystemContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleSystemContact_systemHasContact a owl:ObjectProperty ;
+    rdfs:label "System has Contact (via RoleSystemContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSystemContact." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleSystemOrganisation (Role, System, Organisation)
+ibpdi:roleSystemOrganisation_roleHasSystem a owl:ObjectProperty ;
+    rdfs:label "Role has System (via RoleSystemOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSystemOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:System .
+
+ibpdi:roleSystemOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleSystemOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSystemOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleSystemOrganisation_systemHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "System has Organisation (via RoleSystemOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleSystemOrganisation." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleTenantCommunicationContact (Role, TenantCommunication, Contact)
+ibpdi:roleTenantCommunicationContact_roleHasTenantCommunication a owl:ObjectProperty ;
+    rdfs:label "Role has TenantCommunication (via RoleTenantCommunicationContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleTenantCommunicationContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:TenantCommunication .
+
+ibpdi:roleTenantCommunicationContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleTenantCommunicationContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleTenantCommunicationContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleTenantCommunicationContact_tenantCommunicationHasContact a owl:ObjectProperty ;
+    rdfs:label "TenantCommunication has Contact (via RoleTenantCommunicationContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleTenantCommunicationContact." ;
+    rdfs:domain ibpdi:TenantCommunication ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleTenantCommunicationOrganisation (Role, TenantCommunication, Organisation)
+ibpdi:roleTenantCommunicationOrganisation_roleHasTenantCommunication a owl:ObjectProperty ;
+    rdfs:label "Role has TenantCommunication (via RoleTenantCommunicationOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleTenantCommunicationOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:TenantCommunication .
+
+ibpdi:roleTenantCommunicationOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleTenantCommunicationOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleTenantCommunicationOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleTenantCommunicationOrganisation_tenantCommunicationHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "TenantCommunication has Organisation (via RoleTenantCommunicationOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleTenantCommunicationOrganisation." ;
+    rdfs:domain ibpdi:TenantCommunication ;
+    rdfs:range  ibpdi:Organisation .
+
+### RoleValuationContact (Role, Valuation, Contact)
+ibpdi:roleValuationContact_roleHasValuation a owl:ObjectProperty ;
+    rdfs:label "Role has Valuation (via RoleValuationContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleValuationContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Valuation .
+
+ibpdi:roleValuationContact_roleHasContact a owl:ObjectProperty ;
+    rdfs:label "Role has Contact (via RoleValuationContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleValuationContact." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:roleValuationContact_valuationHasContact a owl:ObjectProperty ;
+    rdfs:label "Valuation has Contact (via RoleValuationContact)" ;
+    rdfs:comment "Derived from 3-way junction table RoleValuationContact." ;
+    rdfs:domain ibpdi:Valuation ;
+    rdfs:range  ibpdi:Contact .
+
+### RoleValuationOrganisation (Role, Valuation, Organisation)
+ibpdi:roleValuationOrganisation_roleHasValuation a owl:ObjectProperty ;
+    rdfs:label "Role has Valuation (via RoleValuationOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleValuationOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Valuation .
+
+ibpdi:roleValuationOrganisation_roleHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Role has Organisation (via RoleValuationOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleValuationOrganisation." ;
+    rdfs:domain ibpdi:Role ;
+    rdfs:range  ibpdi:Organisation .
+
+ibpdi:roleValuationOrganisation_valuationHasOrganisation a owl:ObjectProperty ;
+    rdfs:label "Valuation has Organisation (via RoleValuationOrganisation)" ;
+    rdfs:comment "Derived from 3-way junction table RoleValuationOrganisation." ;
+    rdfs:domain ibpdi:Valuation ;
+    rdfs:range  ibpdi:Organisation .
+
+### Embedded FK relations (parent → child, derived from Id columns in entity tables)
+
+ibpdi:componentTypeHasAccessPanel a owl:ObjectProperty ;
+    rdfs:label "ComponentType has AccessPanel" ;
+    rdfs:comment "Derived from FK column AccessPanel.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:AccessPanel .
+
+ibpdi:componentTypeHasAirCompressor a owl:ObjectProperty ;
+    rdfs:label "ComponentType has AirCompressor" ;
+    rdfs:comment "Derived from FK column AirCompressor.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:AirCompressor .
+
+ibpdi:componentTypeHasAirFilter a owl:ObjectProperty ;
+    rdfs:label "ComponentType has AirFilter" ;
+    rdfs:comment "Derived from FK column AirFilter.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:AirFilter .
+
+ibpdi:componentTypeHasAirHandlingUnit a owl:ObjectProperty ;
+    rdfs:label "ComponentType has AirHandlingUnit" ;
+    rdfs:comment "Derived from FK column AirHandlingUnit.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:AirHandlingUnit .
+
+ibpdi:transferSwitchHasAutomaticTransferSwitch a owl:ObjectProperty ;
+    rdfs:label "TransferSwitch has AutomaticTransferSwitch" ;
+    rdfs:comment "Derived from FK column AutomaticTransferSwitch.TransferSwitchId." ;
+    rdfs:domain ibpdi:TransferSwitch ;
+    rdfs:range  ibpdi:AutomaticTransferSwitch .
+
+ibpdi:controllerHasBacNetController a owl:ObjectProperty ;
+    rdfs:label "Controller has BacNetController" ;
+    rdfs:comment "Derived from FK column BacNetController.ControllerId." ;
+    rdfs:domain ibpdi:Controller ;
+    rdfs:range  ibpdi:BacNetController .
+
+ibpdi:componentTypeHasBoiler a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Boiler" ;
+    rdfs:comment "Derived from FK column Boiler.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Boiler .
+
+ibpdi:siteHasBuilding a owl:ObjectProperty ;
+    rdfs:label "Site has Building" ;
+    rdfs:comment "Derived from FK column Building.SiteId." ;
+    rdfs:domain ibpdi:Site ;
+    rdfs:range  ibpdi:Building .
+
+ibpdi:hvacFanHasCeilingFan a owl:ObjectProperty ;
+    rdfs:label "HvacFan has CeilingFan" ;
+    rdfs:comment "Derived from FK column CeilingFan.HvacFanId." ;
+    rdfs:domain ibpdi:HvacFan ;
+    rdfs:range  ibpdi:CeilingFan .
+
+ibpdi:componentTypeHasChiller a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Chiller" ;
+    rdfs:comment "Derived from FK column Chiller.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Chiller .
+
+ibpdi:generatorHasCoGenerator a owl:ObjectProperty ;
+    rdfs:label "Generator has CoGenerator" ;
+    rdfs:comment "Derived from FK column CoGenerator.GeneratorId." ;
+    rdfs:domain ibpdi:Generator ;
+    rdfs:range  ibpdi:CoGenerator .
+
+ibpdi:componentTypeHasComponent a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Component" ;
+    rdfs:comment "Derived from FK column Component.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Component .
+
+ibpdi:componentTypeHasCondensingUnit a owl:ObjectProperty ;
+    rdfs:label "ComponentType has CondensingUnit" ;
+    rdfs:comment "Derived from FK column CondensingUnit.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:CondensingUnit .
+
+ibpdi:organisationHasContact a owl:ObjectProperty ;
+    rdfs:label "Organisation has Contact" ;
+    rdfs:comment "Derived from FK column Contact.OrganisationId." ;
+    rdfs:domain ibpdi:Organisation ;
+    rdfs:range  ibpdi:Contact .
+
+ibpdi:componentTypeHasController a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Controller" ;
+    rdfs:comment "Derived from FK column Controller.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Controller .
+
+ibpdi:componentTypeHasCoolingTower a owl:ObjectProperty ;
+    rdfs:label "ComponentType has CoolingTower" ;
+    rdfs:comment "Derived from FK column CoolingTower.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:CoolingTower .
+
+ibpdi:organisationHasCostCenter a owl:ObjectProperty ;
+    rdfs:label "Organisation has CostCenter" ;
+    rdfs:comment "Derived from FK column CostCenter.OrganisationId." ;
+    rdfs:domain ibpdi:Organisation ;
+    rdfs:range  ibpdi:CostCenter .
+
+ibpdi:componentTypeHasDamper a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Damper" ;
+    rdfs:comment "Derived from FK column Damper.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Damper .
+
+ibpdi:componentTypeHasDataNetworkEquipment a owl:ObjectProperty ;
+    rdfs:label "ComponentType has DataNetworkEquipment" ;
+    rdfs:comment "Derived from FK column DataNetworkEquipment.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:DataNetworkEquipment .
+
+ibpdi:dataNetworkEquipmentHasDataNetworkSubComponent a owl:ObjectProperty ;
+    rdfs:label "DataNetworkEquipment has DataNetworkSubComponent" ;
+    rdfs:comment "Derived from FK column DataNetworkSubComponent.DataNetworkEquipmentId." ;
+    rdfs:domain ibpdi:DataNetworkEquipment ;
+    rdfs:range  ibpdi:DataNetworkSubComponent .
+
+ibpdi:rentalPaymentHasDunning a owl:ObjectProperty ;
+    rdfs:label "RentalPayment has Dunning" ;
+    rdfs:comment "Derived from FK column Dunning.RentalPaymentId." ;
+    rdfs:domain ibpdi:RentalPayment ;
+    rdfs:range  ibpdi:Dunning .
+
+ibpdi:componentTypeHasElectricalDistributionEquipmentSubComponent a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ElectricalDistributionEquipmentSubComponent" ;
+    rdfs:comment "Derived from FK column ElectricalDistributionEquipmentSubComponent.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ElectricalDistributionEquipmentSubComponent .
+
+ibpdi:componentTypeHasElectricalMeter a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ElectricalMeter" ;
+    rdfs:comment "Derived from FK column ElectricalMeter.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ElectricalMeter .
+
+ibpdi:componentTypeHasElectricalPanelBoard a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ElectricalPanelBoard" ;
+    rdfs:comment "Derived from FK column ElectricalPanelBoard.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ElectricalPanelBoard .
+
+ibpdi:electricalPanelBoardHasElectricalPanelBoardMcb a owl:ObjectProperty ;
+    rdfs:label "ElectricalPanelBoard has ElectricalPanelBoardMcb" ;
+    rdfs:comment "Derived from FK column ElectricalPanelBoardMcb.ElectricalPanelBoardId." ;
+    rdfs:domain ibpdi:ElectricalPanelBoard ;
+    rdfs:range  ibpdi:ElectricalPanelBoardMcb .
+
+ibpdi:electricalPanelBoardHasElectricalPanelBoardMlo a owl:ObjectProperty ;
+    rdfs:label "ElectricalPanelBoard has ElectricalPanelBoardMlo" ;
+    rdfs:comment "Derived from FK column ElectricalPanelBoardMlo.ElectricalPanelBoardId." ;
+    rdfs:domain ibpdi:ElectricalPanelBoard ;
+    rdfs:range  ibpdi:ElectricalPanelBoardMlo .
+
+ibpdi:systemHasElectricalSystem a owl:ObjectProperty ;
+    rdfs:label "System has ElectricalSystem" ;
+    rdfs:comment "Derived from FK column ElectricalSystem.SystemId." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:ElectricalSystem .
+
+ibpdi:componentTypeHasElectricalVehicleChargingStation a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ElectricalVehicleChargingStation" ;
+    rdfs:comment "Derived from FK column ElectricalVehicleChargingStation.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ElectricalVehicleChargingStation .
+
+ibpdi:systemHasElectronicSafetyAndSecuritySystem a owl:ObjectProperty ;
+    rdfs:label "System has ElectronicSafetyAndSecuritySystem" ;
+    rdfs:comment "Derived from FK column ElectronicSafetyAndSecuritySystem.SystemId." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:ElectronicSafetyAndSecuritySystem .
+
+ibpdi:componentTypeHasElevator a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Elevator" ;
+    rdfs:comment "Derived from FK column Elevator.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Elevator .
+
+ibpdi:componentTypeHasElevatorMachine a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ElevatorMachine" ;
+    rdfs:comment "Derived from FK column ElevatorMachine.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ElevatorMachine .
+
+ibpdi:componentTypeHasEscalator a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Escalator" ;
+    rdfs:comment "Derived from FK column Escalator.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Escalator .
+
+ibpdi:dataNetworkEquipmentHasEthernetSwitchPort a owl:ObjectProperty ;
+    rdfs:label "DataNetworkEquipment has EthernetSwitchPort" ;
+    rdfs:comment "Derived from FK column EthernetSwitchPort.DataNetworkEquipmentId." ;
+    rdfs:domain ibpdi:DataNetworkEquipment ;
+    rdfs:range  ibpdi:EthernetSwitchPort .
+
+ibpdi:terminalUnitHasFanCoilUnit a owl:ObjectProperty ;
+    rdfs:label "TerminalUnit has FanCoilUnit" ;
+    rdfs:comment "Derived from FK column FanCoilUnit.TerminalUnitId." ;
+    rdfs:domain ibpdi:TerminalUnit ;
+    rdfs:range  ibpdi:FanCoilUnit .
+
+ibpdi:fanCoilUnitHasFanCoilUnitReheat a owl:ObjectProperty ;
+    rdfs:label "FanCoilUnit has FanCoilUnitReheat" ;
+    rdfs:comment "Derived from FK column FanCoilUnitReheat.FanCoilUnitId." ;
+    rdfs:domain ibpdi:FanCoilUnit ;
+    rdfs:range  ibpdi:FanCoilUnitReheat .
+
+ibpdi:terminalUnitHasFanPoweredBox a owl:ObjectProperty ;
+    rdfs:label "TerminalUnit has FanPoweredBox" ;
+    rdfs:comment "Derived from FK column FanPoweredBox.TerminalUnitId." ;
+    rdfs:domain ibpdi:TerminalUnit ;
+    rdfs:range  ibpdi:FanPoweredBox .
+
+ibpdi:terminalUnitHasFanPoweredBoxReheat a owl:ObjectProperty ;
+    rdfs:label "TerminalUnit has FanPoweredBoxReheat" ;
+    rdfs:comment "Derived from FK column FanPoweredBoxReheat.TerminalUnitId." ;
+    rdfs:domain ibpdi:TerminalUnit ;
+    rdfs:range  ibpdi:FanPoweredBoxReheat .
+
+ibpdi:componentTypeHasFaucet a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Faucet" ;
+    rdfs:comment "Derived from FK column Faucet.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Faucet .
+
+ibpdi:damperHasFireDamper a owl:ObjectProperty ;
+    rdfs:label "Damper has FireDamper" ;
+    rdfs:comment "Derived from FK column FireDamper.DamperId." ;
+    rdfs:domain ibpdi:Damper ;
+    rdfs:range  ibpdi:FireDamper .
+
+ibpdi:componentTypeHasFirePump a owl:ObjectProperty ;
+    rdfs:label "ComponentType has FirePump" ;
+    rdfs:comment "Derived from FK column FirePump.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:FirePump .
+
+ibpdi:componentTypeHasFireSprinklerHead a owl:ObjectProperty ;
+    rdfs:label "ComponentType has FireSprinklerHead" ;
+    rdfs:comment "Derived from FK column FireSprinklerHead.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:FireSprinklerHead .
+
+ibpdi:buildingHasFloor a owl:ObjectProperty ;
+    rdfs:label "Building has Floor" ;
+    rdfs:comment "Derived from FK column Floor.BuildingId." ;
+    rdfs:domain ibpdi:Building ;
+    rdfs:range  ibpdi:Floor .
+
+ibpdi:componentTypeHasFlushometerValve a owl:ObjectProperty ;
+    rdfs:label "ComponentType has FlushometerValve" ;
+    rdfs:comment "Derived from FK column FlushometerValve.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:FlushometerValve .
+
+ibpdi:componentTypeHasGasMeter a owl:ObjectProperty ;
+    rdfs:label "ComponentType has GasMeter" ;
+    rdfs:comment "Derived from FK column GasMeter.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:GasMeter .
+
+ibpdi:componentTypeHasGateway a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Gateway" ;
+    rdfs:comment "Derived from FK column Gateway.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Gateway .
+
+ibpdi:componentTypeHasGenerator a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Generator" ;
+    rdfs:comment "Derived from FK column Generator.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Generator .
+
+ibpdi:addressHasGeoCoordinate a owl:ObjectProperty ;
+    rdfs:label "Address has GeoCoordinate" ;
+    rdfs:comment "Derived from FK column GeoCoordinate.AddressId." ;
+    rdfs:domain ibpdi:Address ;
+    rdfs:range  ibpdi:GeoCoordinate .
+
+ibpdi:operationalMeasurementHasGhgEmission a owl:ObjectProperty ;
+    rdfs:label "OperationalMeasurement has GhgEmission" ;
+    rdfs:comment "Derived from FK column GhgEmission.OperationalMeasurementId." ;
+    rdfs:domain ibpdi:OperationalMeasurement ;
+    rdfs:range  ibpdi:GhgEmission .
+
+ibpdi:componentTypeHasHvacFan a owl:ObjectProperty ;
+    rdfs:label "ComponentType has HvacFan" ;
+    rdfs:comment "Derived from FK column HvacFan.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:HvacFan .
+
+ibpdi:hvacFanHasHvacFanSubComponent a owl:ObjectProperty ;
+    rdfs:label "HvacFan has HvacFanSubComponent" ;
+    rdfs:comment "Derived from FK column HvacFanSubComponent.HvacFanId." ;
+    rdfs:domain ibpdi:HvacFan ;
+    rdfs:range  ibpdi:HvacFanSubComponent .
+
+ibpdi:componentTypeHasHvacHeatTracing a owl:ObjectProperty ;
+    rdfs:label "ComponentType has HvacHeatTracing" ;
+    rdfs:comment "Derived from FK column HvacHeatTracing.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:HvacHeatTracing .
+
+ibpdi:componentTypeHasHvacPump a owl:ObjectProperty ;
+    rdfs:label "ComponentType has HvacPump" ;
+    rdfs:comment "Derived from FK column HvacPump.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:HvacPump .
+
+ibpdi:hvacValveHasHvacShutOffValve a owl:ObjectProperty ;
+    rdfs:label "HvacValve has HvacShutOffValve" ;
+    rdfs:comment "Derived from FK column HvacShutOffValve.HvacValveId." ;
+    rdfs:domain ibpdi:HvacValve ;
+    rdfs:range  ibpdi:HvacShutOffValve .
+
+ibpdi:systemHasHvacSystem a owl:ObjectProperty ;
+    rdfs:label "System has HvacSystem" ;
+    rdfs:comment "Derived from FK column HvacSystem.SystemId." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:HvacSystem .
+
+ibpdi:componentTypeHasHvacTank a owl:ObjectProperty ;
+    rdfs:label "ComponentType has HvacTank" ;
+    rdfs:comment "Derived from FK column HvacTank.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:HvacTank .
+
+ibpdi:componentTypeHasHvacValve a owl:ObjectProperty ;
+    rdfs:label "ComponentType has HvacValve" ;
+    rdfs:comment "Derived from FK column HvacValve.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:HvacValve .
+
+ibpdi:componentTypeHasIctHardware a owl:ObjectProperty ;
+    rdfs:label "ComponentType has IctHardware" ;
+    rdfs:comment "Derived from FK column IctHardware.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:IctHardware .
+
+ibpdi:accountHasIndividualAccount a owl:ObjectProperty ;
+    rdfs:label "Account has IndividualAccount" ;
+    rdfs:comment "Derived from FK column IndividualAccount.AccountId." ;
+    rdfs:domain ibpdi:Account ;
+    rdfs:range  ibpdi:IndividualAccount .
+
+ibpdi:organisationHasIndividualAccount a owl:ObjectProperty ;
+    rdfs:label "Organisation has IndividualAccount" ;
+    rdfs:comment "Derived from FK column IndividualAccount.OrganisationId." ;
+    rdfs:domain ibpdi:Organisation ;
+    rdfs:range  ibpdi:IndividualAccount .
+
+ibpdi:systemHasInformationAndCommunicationSystem a owl:ObjectProperty ;
+    rdfs:label "System has InformationAndCommunicationSystem" ;
+    rdfs:comment "Derived from FK column InformationAndCommunicationSystem.SystemId." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:InformationAndCommunicationSystem .
+
+ibpdi:componentTypeHasItRack a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ItRack" ;
+    rdfs:comment "Derived from FK column ItRack.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ItRack .
+
+ibpdi:componentTypeHasJockeyPump a owl:ObjectProperty ;
+    rdfs:label "ComponentType has JockeyPump" ;
+    rdfs:comment "Derived from FK column JockeyPump.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:JockeyPump .
+
+ibpdi:siteHasLand a owl:ObjectProperty ;
+    rdfs:label "Site has Land" ;
+    rdfs:comment "Derived from FK column Land.SiteId." ;
+    rdfs:domain ibpdi:Site ;
+    rdfs:range  ibpdi:Land .
+
+ibpdi:systemHasLightingSystem a owl:ObjectProperty ;
+    rdfs:label "System has LightingSystem" ;
+    rdfs:comment "Derived from FK column LightingSystem.SystemId." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:LightingSystem .
+
+ibpdi:componentTypeHasLuminaire a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Luminaire" ;
+    rdfs:comment "Derived from FK column Luminaire.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Luminaire .
+
+ibpdi:controllerHasModbusController a owl:ObjectProperty ;
+    rdfs:label "Controller has ModbusController" ;
+    rdfs:comment "Derived from FK column ModbusController.ControllerId." ;
+    rdfs:domain ibpdi:Controller ;
+    rdfs:range  ibpdi:ModbusController .
+
+ibpdi:componentTypeHasMovingWalkway a owl:ObjectProperty ;
+    rdfs:label "ComponentType has MovingWalkway" ;
+    rdfs:comment "Derived from FK column MovingWalkway.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:MovingWalkway .
+
+ibpdi:organisationHasNeighbourhood a owl:ObjectProperty ;
+    rdfs:label "Organisation has Neighbourhood" ;
+    rdfs:comment "Derived from FK column Neighbourhood.OrganisationId." ;
+    rdfs:domain ibpdi:Organisation ;
+    rdfs:range  ibpdi:Neighbourhood .
+
+ibpdi:sensorHasOperationalMeasurement a owl:ObjectProperty ;
+    rdfs:label "Sensor has OperationalMeasurement" ;
+    rdfs:comment "Derived from FK column OperationalMeasurement.SensorId." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:OperationalMeasurement .
+
+ibpdi:plumbingTankHasPlumbingExpansionTank a owl:ObjectProperty ;
+    rdfs:label "PlumbingTank has PlumbingExpansionTank" ;
+    rdfs:comment "Derived from FK column PlumbingExpansionTank.PlumbingTankId." ;
+    rdfs:domain ibpdi:PlumbingTank ;
+    rdfs:range  ibpdi:PlumbingExpansionTank .
+
+ibpdi:componentTypeHasPlumbingPump a owl:ObjectProperty ;
+    rdfs:label "ComponentType has PlumbingPump" ;
+    rdfs:comment "Derived from FK column PlumbingPump.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:PlumbingPump .
+
+ibpdi:plumbingPumpHasPlumbingPumpSubComponent a owl:ObjectProperty ;
+    rdfs:label "PlumbingPump has PlumbingPumpSubComponent" ;
+    rdfs:comment "Derived from FK column PlumbingPumpSubComponent.PlumbingPumpId." ;
+    rdfs:domain ibpdi:PlumbingPump ;
+    rdfs:range  ibpdi:PlumbingPumpSubComponent .
+
+ibpdi:plumbingValveHasPlumbingShutOffValve a owl:ObjectProperty ;
+    rdfs:label "PlumbingValve has PlumbingShutOffValve" ;
+    rdfs:comment "Derived from FK column PlumbingShutOffValve.PlumbingValveId." ;
+    rdfs:domain ibpdi:PlumbingValve ;
+    rdfs:range  ibpdi:PlumbingShutOffValve .
+
+ibpdi:plumbingTankHasPlumbingStorageTank a owl:ObjectProperty ;
+    rdfs:label "PlumbingTank has PlumbingStorageTank" ;
+    rdfs:comment "Derived from FK column PlumbingStorageTank.PlumbingTankId." ;
+    rdfs:domain ibpdi:PlumbingTank ;
+    rdfs:range  ibpdi:PlumbingStorageTank .
+
+ibpdi:systemHasPlumbingSystem a owl:ObjectProperty ;
+    rdfs:label "System has PlumbingSystem" ;
+    rdfs:comment "Derived from FK column PlumbingSystem.SystemId." ;
+    rdfs:domain ibpdi:System ;
+    rdfs:range  ibpdi:PlumbingSystem .
+
+ibpdi:componentTypeHasPlumbingTank a owl:ObjectProperty ;
+    rdfs:label "ComponentType has PlumbingTank" ;
+    rdfs:comment "Derived from FK column PlumbingTank.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:PlumbingTank .
+
+ibpdi:componentTypeHasPlumbingValve a owl:ObjectProperty ;
+    rdfs:label "ComponentType has PlumbingValve" ;
+    rdfs:comment "Derived from FK column PlumbingValve.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:PlumbingValve .
+
+ibpdi:plumbingValveHasPlumbingValveSubComponent a owl:ObjectProperty ;
+    rdfs:label "PlumbingValve has PlumbingValveSubComponent" ;
+    rdfs:comment "Derived from FK column PlumbingValveSubComponent.PlumbingValveId." ;
+    rdfs:domain ibpdi:PlumbingValve ;
+    rdfs:range  ibpdi:PlumbingValveSubComponent .
+
+ibpdi:portfolioHasPortfolioStrategy a owl:ObjectProperty ;
+    rdfs:label "Portfolio has PortfolioStrategy" ;
+    rdfs:comment "Derived from FK column PortfolioStrategy.PortfolioId." ;
+    rdfs:domain ibpdi:Portfolio ;
+    rdfs:range  ibpdi:PortfolioStrategy .
+
+ibpdi:rentalContractHasRentalOption a owl:ObjectProperty ;
+    rdfs:label "RentalContract has RentalOption" ;
+    rdfs:comment "Derived from FK column RentalOption.RentalContractId." ;
+    rdfs:domain ibpdi:RentalContract ;
+    rdfs:range  ibpdi:RentalOption .
+
+ibpdi:rentalContractHasRentalPayment a owl:ObjectProperty ;
+    rdfs:label "RentalContract has RentalPayment" ;
+    rdfs:comment "Derived from FK column RentalPayment.RentalContractId." ;
+    rdfs:domain ibpdi:RentalContract ;
+    rdfs:range  ibpdi:RentalPayment .
+
+ibpdi:componentTypeHasSensorEquipment a owl:ObjectProperty ;
+    rdfs:label "ComponentType has SensorEquipment" ;
+    rdfs:comment "Derived from FK column SensorEquipment.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:SensorEquipment .
+
+ibpdi:sensorHasSensorMeasurement a owl:ObjectProperty ;
+    rdfs:label "Sensor has SensorMeasurement" ;
+    rdfs:comment "Derived from FK column SensorMeasurement.SensorId." ;
+    rdfs:domain ibpdi:Sensor ;
+    rdfs:range  ibpdi:SensorMeasurement .
+
+ibpdi:ictHardwareHasServer a owl:ObjectProperty ;
+    rdfs:label "IctHardware has Server" ;
+    rdfs:comment "Derived from FK column Server.IctHardwareId." ;
+    rdfs:domain ibpdi:IctHardware ;
+    rdfs:range  ibpdi:Server .
+
+ibpdi:floorHasSpace a owl:ObjectProperty ;
+    rdfs:label "Floor has Space" ;
+    rdfs:comment "Derived from FK column Space.FloorId." ;
+    rdfs:domain ibpdi:Floor ;
+    rdfs:range  ibpdi:Space .
+
+ibpdi:componentTypeHasSprinklerHeatTracing a owl:ObjectProperty ;
+    rdfs:label "ComponentType has SprinklerHeatTracing" ;
+    rdfs:comment "Derived from FK column SprinklerHeatTracing.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:SprinklerHeatTracing .
+
+ibpdi:componentTypeHasSprinklerTank a owl:ObjectProperty ;
+    rdfs:label "ComponentType has SprinklerTank" ;
+    rdfs:comment "Derived from FK column SprinklerTank.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:SprinklerTank .
+
+ibpdi:componentTypeHasSprinklerValve a owl:ObjectProperty ;
+    rdfs:label "ComponentType has SprinklerValve" ;
+    rdfs:comment "Derived from FK column SprinklerValve.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:SprinklerValve .
+
+ibpdi:buildingHasSustainabilityIndicator a owl:ObjectProperty ;
+    rdfs:label "Building has SustainabilityIndicator" ;
+    rdfs:comment "Derived from FK column SustainabilityIndicator.BuildingId." ;
+    rdfs:domain ibpdi:Building ;
+    rdfs:range  ibpdi:SustainabilityIndicator .
+
+ibpdi:waterHeaterHasTanklessWaterHeater a owl:ObjectProperty ;
+    rdfs:label "WaterHeater has TanklessWaterHeater" ;
+    rdfs:comment "Derived from FK column TanklessWaterHeater.WaterHeaterId." ;
+    rdfs:domain ibpdi:WaterHeater ;
+    rdfs:range  ibpdi:TanklessWaterHeater .
+
+ibpdi:tanklessWaterHeaterHasTanklessWaterHeaterSubComponent a owl:ObjectProperty ;
+    rdfs:label "TanklessWaterHeater has TanklessWaterHeaterSubComponent" ;
+    rdfs:comment "Derived from FK column TanklessWaterHeaterSubComponent.TanklessWaterHeaterId." ;
+    rdfs:domain ibpdi:TanklessWaterHeater ;
+    rdfs:range  ibpdi:TanklessWaterHeaterSubComponent .
+
+ibpdi:waterHeaterHasTankWaterHeater a owl:ObjectProperty ;
+    rdfs:label "WaterHeater has TankWaterHeater" ;
+    rdfs:comment "Derived from FK column TankWaterHeater.WaterHeaterId." ;
+    rdfs:domain ibpdi:WaterHeater ;
+    rdfs:range  ibpdi:TankWaterHeater .
+
+ibpdi:tankWaterHeaterHasTankWaterHeaterSubComponent a owl:ObjectProperty ;
+    rdfs:label "TankWaterHeater has TankWaterHeaterSubComponent" ;
+    rdfs:comment "Derived from FK column TankWaterHeaterSubComponent.TankWaterHeaterId." ;
+    rdfs:domain ibpdi:TankWaterHeater ;
+    rdfs:range  ibpdi:TankWaterHeaterSubComponent .
+
+ibpdi:rentalUnitHasTenantCommunication a owl:ObjectProperty ;
+    rdfs:label "RentalUnit has TenantCommunication" ;
+    rdfs:comment "Derived from FK column TenantCommunication.RentalUnitId." ;
+    rdfs:domain ibpdi:RentalUnit ;
+    rdfs:range  ibpdi:TenantCommunication .
+
+ibpdi:componentTypeHasTerminalUnit a owl:ObjectProperty ;
+    rdfs:label "ComponentType has TerminalUnit" ;
+    rdfs:comment "Derived from FK column TerminalUnit.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:TerminalUnit .
+
+ibpdi:componentTypeHasThermalMeter a owl:ObjectProperty ;
+    rdfs:label "ComponentType has ThermalMeter" ;
+    rdfs:comment "Derived from FK column ThermalMeter.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:ThermalMeter .
+
+ibpdi:componentTypeHasToilet a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Toilet" ;
+    rdfs:comment "Derived from FK column Toilet.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Toilet .
+
+ibpdi:toiletHasToiletFlushometer a owl:ObjectProperty ;
+    rdfs:label "Toilet has ToiletFlushometer" ;
+    rdfs:comment "Derived from FK column ToiletFlushometer.ToiletId." ;
+    rdfs:domain ibpdi:Toilet ;
+    rdfs:range  ibpdi:ToiletFlushometer .
+
+ibpdi:toiletHasToiletTank a owl:ObjectProperty ;
+    rdfs:label "Toilet has ToiletTank" ;
+    rdfs:comment "Derived from FK column ToiletTank.ToiletId." ;
+    rdfs:domain ibpdi:Toilet ;
+    rdfs:range  ibpdi:ToiletTank .
+
+ibpdi:componentTypeHasTransferSwitch a owl:ObjectProperty ;
+    rdfs:label "ComponentType has TransferSwitch" ;
+    rdfs:comment "Derived from FK column TransferSwitch.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:TransferSwitch .
+
+ibpdi:componentTypeHasTransformer a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Transformer" ;
+    rdfs:comment "Derived from FK column Transformer.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Transformer .
+
+ibpdi:componentTypeHasUnitHeater a owl:ObjectProperty ;
+    rdfs:label "ComponentType has UnitHeater" ;
+    rdfs:comment "Derived from FK column UnitHeater.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:UnitHeater .
+
+ibpdi:componentTypeHasUps a owl:ObjectProperty ;
+    rdfs:label "ComponentType has Ups" ;
+    rdfs:comment "Derived from FK column Ups.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:Ups .
+
+ibpdi:componentTypeHasUrinalFlushometer a owl:ObjectProperty ;
+    rdfs:label "ComponentType has UrinalFlushometer" ;
+    rdfs:comment "Derived from FK column UrinalFlushometer.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:UrinalFlushometer .
+
+ibpdi:componentTypeHasVariableFrequencyDrive a owl:ObjectProperty ;
+    rdfs:label "ComponentType has VariableFrequencyDrive" ;
+    rdfs:comment "Derived from FK column VariableFrequencyDrive.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:VariableFrequencyDrive .
+
+ibpdi:terminalUnitHasVavBoxReheat a owl:ObjectProperty ;
+    rdfs:label "TerminalUnit has VavBoxReheat" ;
+    rdfs:comment "Derived from FK column VavBoxReheat.TerminalUnitId." ;
+    rdfs:domain ibpdi:TerminalUnit ;
+    rdfs:range  ibpdi:VavBoxReheat .
+
+ibpdi:componentTypeHasWaterFiltration a owl:ObjectProperty ;
+    rdfs:label "ComponentType has WaterFiltration" ;
+    rdfs:comment "Derived from FK column WaterFiltration.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:WaterFiltration .
+
+ibpdi:componentTypeHasWaterHeater a owl:ObjectProperty ;
+    rdfs:label "ComponentType has WaterHeater" ;
+    rdfs:comment "Derived from FK column WaterHeater.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:WaterHeater .
+
+ibpdi:componentTypeHasWaterMeter a owl:ObjectProperty ;
+    rdfs:label "ComponentType has WaterMeter" ;
+    rdfs:comment "Derived from FK column WaterMeter.ComponentTypeId." ;
+    rdfs:domain ibpdi:ComponentType ;
+    rdfs:range  ibpdi:WaterMeter .
+
+ibpdi:dataNetworkEquipmentHasWirelessAccessPoint a owl:ObjectProperty ;
+    rdfs:label "DataNetworkEquipment has WirelessAccessPoint" ;
+    rdfs:comment "Derived from FK column WirelessAccessPoint.DataNetworkEquipmentId." ;
+    rdfs:domain ibpdi:DataNetworkEquipment ;
+    rdfs:range  ibpdi:WirelessAccessPoint .
+
+ibpdi:workAreaTypeHasWorkArea a owl:ObjectProperty ;
+    rdfs:label "WorkAreaType has WorkArea" ;
+    rdfs:comment "Derived from FK column WorkArea.WorkAreaTypeId." ;
+    rdfs:domain ibpdi:WorkAreaType ;
+    rdfs:range  ibpdi:WorkArea .
+
+ibpdi:areaMeasurementHasWorkArea a owl:ObjectProperty ;
+    rdfs:label "AreaMeasurement has WorkArea" ;
+    rdfs:comment "Derived from FK column WorkArea.AreaMeasurementId." ;
+    rdfs:domain ibpdi:AreaMeasurement ;
+    rdfs:range  ibpdi:WorkArea .
+
+ibpdi:workAreaHasWorkspace a owl:ObjectProperty ;
+    rdfs:label "WorkArea has Workspace" ;
+    rdfs:comment "Derived from FK column Workspace.WorkAreaId." ;
+    rdfs:domain ibpdi:WorkArea ;
+    rdfs:range  ibpdi:Workspace .
+

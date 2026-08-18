@@ -1,0 +1,106 @@
+# Copyright (c) 2025 Ekkodale GmbH. All rights reserved.
+#
+# This file is part of the gaeco platform system.
+#
+# Use of this file is governed by the terms of the license
+# in LICENSE.md at the root of this repository.
+# Unauthorized copying, modification, distribution, or use of this file,
+# via any medium, is strictly prohibited except as expressly permitted
+# under that license.
+
+# =============================================================================
+# AppOrchestrator — deployment/stack management
+# -----------------------------------------------------------------------------
+# Started alongside because it registers the Microfrontends (containers with app.mfe.* labels)
+# in the Plugin Host ("MFE sync"). Needs access to the Docker socket.
+# =============================================================================
+services:
+  apporchestrator-postgres:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: ${ORCHESTRATOR_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${ORCHESTRATOR_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${ORCHESTRATOR_POSTGRES_DATABASE}
+    ports:
+      - "${ORCHESTRATOR_POSTGRES_PORT}:5432"
+    volumes:
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/orchestrator/postgres/
+        target: /var/lib/postgresql/data
+    networks:
+      - orchestrator-internal
+    healthcheck:
+      test: pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB
+      interval: 10s
+      timeout: 5s
+      retries: 50
+
+  apporchestrator-server:
+    image: ${IMAGE_REGISTRY}/apporchestrator-server:${ORCHESTRATOR_SERVER_TAG}
+    restart: always
+    ports:
+      - "${ORCHESTRATOR_SERVER_PORT}:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+      # IMPORTANT: appsettings.Development.json sets DockerHostUri to the Windows
+      # named pipe (npipe://./pipe/docker_engine) — which does not exist in the Linux
+      # container. Force the mounted Unix socket explicitly here, otherwise the
+      # Orchestrator cannot reach the Docker daemon.
+      Orchestrator__DockerHostUri: unix:///var/run/docker.sock
+      Keycloak__Host: ${KEYCLOAK_BACKEND_URL}
+      Keycloak__Realm: ${KEYCLOAK_REALM}
+      Keycloak__ClientId: ${KEYCLOAK_ORCHESTRATOR_CLIENT_ID}
+      Postgres__Host: apporchestrator-postgres
+      Postgres__Port: 5432
+      Postgres__User: ${ORCHESTRATOR_POSTGRES_USER}
+      Postgres__Password: ${ORCHESTRATOR_POSTGRES_PASSWORD}
+      Postgres__Database: ${ORCHESTRATOR_POSTGRES_DATABASE}
+      Orchestrator__RootPath: /orchestrator
+    volumes:
+      # Docker socket: usable under Docker Desktop (Win/Mac) via the Linux backend.
+      - ${DOCKER_SOCKET_PATH:-/var/run/docker.sock}:/var/run/docker.sock
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/orchestrator/server
+        target: /orchestrator
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/orchestrator/docker-config
+        target: /root/.docker
+    depends_on:
+      apporchestrator-postgres:
+        condition: service_healthy
+      # Waits for Keycloak (JWT validation / JWKS at startup).
+      keycloak-server:
+        condition: service_healthy
+    networks:
+      - orchestrator-internal
+      - gaeco-network
+
+  apporchestrator-client:
+    image: ${IMAGE_REGISTRY}/apporchestrator-client:${ORCHESTRATOR_CLIENT_TAG}
+    restart: always
+    ports:
+      - "${ORCHESTRATOR_CLIENT_PORT}:80"
+    environment:
+      - VITE_API_URL=http://localhost:${ORCHESTRATOR_SERVER_PORT}
+      - VITE_MOUNT_PATH=${ORCHESTRATOR_MOUNT_ROUTE}
+      - VITE_KEYCLOAK_AUTHORITY=${KEYCLOAK_BROWSER_URL}/realms/${KEYCLOAK_REALM}
+      - VITE_KEYCLOAK_CLIENT_ID=${KEYCLOAK_ORCHESTRATOR_CLIENT_ID}
+    depends_on:
+      - apporchestrator-server
+    networks:
+      - gaeco-network
+    labels:
+      - "app.mfe.id=app-orchestrator"
+      - "app.mfe.displayName=App Orchestrator"
+      - "app.mfe.description=App Orchestrator Application"
+      - "app.mfe.iconPath=/icon.svg"
+      - "app.mfe.entrypointPath=/assets/remoteEntry.js"
+      - "app.mfe.exposedModule=App"
+      - "app.mfe.route=${ORCHESTRATOR_MOUNT_ROUTE}"
+
+networks:
+  orchestrator-internal:
+  gaeco-network:
+    name: gaeco-local

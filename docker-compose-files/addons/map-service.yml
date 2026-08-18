@@ -1,0 +1,105 @@
+# Copyright (c) 2025 Ekkodale GmbH. All rights reserved.
+#
+# This file is part of the gaeco platform system.
+#
+# Use of this file is governed by the terms of the license
+# in LICENSE.md at the root of this repository.
+# Unauthorized copying, modification, distribution, or use of this file,
+# via any medium, is strictly prohibited except as expressly permitted
+# under that license.
+
+# =============================================================================
+# ADD-ON: MapService — map/geo viewer (+ MFE client)
+# -----------------------------------------------------------------------------
+# Service-specific config is set inline with defaults (${VAR:-default}) — this keeps
+# the central .env lean. Usually you only need to set the UseCase ID.
+# =============================================================================
+services:
+  map-postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: ${MAP_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${MAP_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${MAP_POSTGRES_DATABASE}
+    ports:
+      - "${MAP_POSTGRES_PORT}:5432"
+    volumes:
+      - type: bind
+        source: ${VOLUME_BASE_PATH}/map/postgres/
+        target: /var/lib/postgresql/data
+    networks:
+      - map-internal
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-h", "127.0.0.1", "-d", "${MAP_POSTGRES_DATABASE}", "-U", "${MAP_POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 50
+      start_period: 30s
+
+  map-server:
+    image: ${IMAGE_REGISTRY}/mapservice:${MAP_SERVER_TAG}
+    ports:
+      - "${MAP_SERVER_PORT}:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      Keycloak__ServerUrl: ${KEYCLOAK_BACKEND_URL}
+      Keycloak__Realm: ${KEYCLOAK_REALM}
+      Keycloak__Authority: ${KEYCLOAK_BROWSER_URL}/realms/${KEYCLOAK_REALM}
+      Database__Host: map-postgres
+      Database__Port: 5432
+      Database__Name: ${MAP_POSTGRES_DATABASE}
+      Database__User: ${MAP_POSTGRES_USER}
+      Database__Password: ${MAP_POSTGRES_PASSWORD}
+      Kafka__Address: ${KAFKA_ADDRESS}
+      Kafka__AutoOffsetReset: ${KAFKA_AUTO_OFFSET_RESET}
+      Kafka__SessionTimeoutMs: ${KAFKA_SESSION_TIMEOUT_MS}
+      Kafka__MaxPollIntervalMs: ${KAFKA_MAX_POLL_INTERVAL_MS}
+      Kafka__ConsumerGroup: ${MAP_KAFKA_CONSUMER_GROUP:-map-service-group}
+      # The UseCase ID the MapService operates on — enter it here:
+      UseCase__Id: ${MAP_USECASE_ID:-6a1c00a8-deec-430c-8808-7a1aad68bc2c}
+      OpenTelemetry__OtlpEndpoint: ${OTLP_ENDPOINT}
+      InstanceService__Address: http://instance-server:80
+      Guideline__Classifications__Building__ClassType: ${MAP_BUILDING_CLASSTYPE:-https://ibpdi.org/ontology/2.0/Building}
+      Guideline__Classifications__Address__ClassType: ${MAP_ADDRESS_CLASSTYPE:-https://ibpdi.org/ontology/2.0/Address}
+      Guideline__Classifications__Building__Properties__Name__0: ${MAP_BUILDING_PROP_NAME:-Name}
+      Guideline__Classifications__Building__Properties__Description__0: ${MAP_BUILDING_PROP_DESCRIPTION:-Description}
+      Guideline__Classifications__Building__Properties__Type__0: ${MAP_BUILDING_PROP_TYPE:-Primary_type}
+      Guideline__Classifications__Address__Properties__Latitude__0: ${MAP_ADDRESS_PROP_LAT:-DeprecatedLatitude}
+      Guideline__Classifications__Address__Properties__Longitude__0: ${MAP_ADDRESS_PROP_LON:-DeprecatedLongitude}
+      Relations__Address-Building: ${MAP_RELATION_ADDRESSBUILDING:-https://ibpdi.org/ontology/2.0/addressHasBuilding}
+    depends_on:
+      map-postgres:
+        condition: service_healthy
+    networks:
+      - map-internal
+      - gaeco-network
+    healthcheck:
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/localhost/80 && echo -e 'GET /health HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q '200 OK'"]
+      interval: 10s
+      timeout: 5s
+      retries: 50
+
+  map-client:
+    image: ${IMAGE_REGISTRY}/mapserviceclient:${MAP_CLIENT_TAG}
+    ports:
+      - "${MAP_CLIENT_PORT}:80"
+    environment:
+      VITE_MOUNT_PATH: ${MAP_MOUNT_ROUTE}
+    depends_on:
+      map-server:
+        condition: service_healthy
+    networks:
+      - gaeco-network
+    labels:
+      app.mfe.id: "map-client"
+      app.mfe.displayName: "Map Client"
+      app.mfe.description: "Map Client Application"
+      app.mfe.iconPath: "/Map.svg"
+      app.mfe.entrypointPath: "/assets/remoteEntry.js"
+      app.mfe.exposedModule: "App"
+      app.mfe.route: "${MAP_MOUNT_ROUTE}"
+
+networks:
+  map-internal:
+  gaeco-network:
+    name: gaeco-local

@@ -1,0 +1,2 @@
+# Demo data guideline exports are large binaries — keep them out of git history.
+*.guideline filter=lfs diff=lfs merge=lfs -text

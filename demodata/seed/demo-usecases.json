@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Building Energy Management",
+    "description": "Comprehensive building energy management use case for monitoring and optimizing energy consumption in commercial buildings. Includes sensor data integration, energy efficiency analysis, and sustainability reporting."
+  },
+  {
+    "name": "Facility Maintenance Planning",
+    "description": "Digital facility maintenance planning and scheduling system for proactive maintenance management. Covers equipment monitoring, maintenance scheduling, and resource allocation."
+  },
+  {
+    "name": "Space Utilization Analytics",
+    "description": "Analytics platform for space utilization optimization in office buildings. Includes occupancy monitoring, space planning, and workplace efficiency analysis."
+  }
+]
