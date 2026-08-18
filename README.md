@@ -1,8 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/gaeco-ekkodale/.github/main/assets/gaeco_logo_horizontal_color.png" width="200" alt="gaeco logo">
 
-  # gaeco-ext
-
   <em>Runs the complete gaeco platform locally with a single command — public container images only, no source build.</em>
 
   [![License](https://img.shields.io/badge/license-fair--code-blue.svg)](LICENSE.md)
@@ -84,7 +82,6 @@ setup to do first; adding further accounts is described in
 | Service | URL | Credentials (default) |
 |---|---|---|
 | **Plugin Host (main entry point)** | http://localhost:5000 | Keycloak login |
-| App Orchestrator | http://localhost:3000 | Keycloak login |
 | Keycloak Admin | http://localhost:9345/admin | `admin` / `admin` |
 | Kafka UI | http://localhost:8080 | `gaeco` / `gaeco` |
 | MinIO Console | http://localhost:9001 | `minioadmin` / `minioadmin` |
